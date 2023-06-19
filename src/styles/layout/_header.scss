@@ -1,0 +1,36 @@
+
+.header {
+    &__menu-toggle {
+        background: none;
+        border: 0;
+        height: 20px;
+        position: relative;
+        width: 30px;
+
+        .bar {
+            background: $c-blue;
+            display: block;
+            height: 4px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+
+            &--bot {
+                bottom: 0;
+            }
+
+            &--mid {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &--top {
+                top: 0;
+            }
+        }
+
+        @media screen and (min-width: $mq-tablet) {
+            display: none;
+        }
+    }
+}
