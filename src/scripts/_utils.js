@@ -2,6 +2,7 @@ export const initializeUtills = () => {
   // Nav toggle on mobile
   const body = document.body;
   const menuToggle = document.querySelector(".header__menu-toggle");
+  const menuLinks = document.querySelectorAll(".header__nav a");
 
   const toggleHeaderNav = (e) => {
     e.preventDefault();
@@ -14,6 +15,12 @@ export const initializeUtills = () => {
     if (e.key === "Enter" || e.keyCode === 13) {
       toggleHeaderNav;
     }
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      body.classList.remove("show-nav");
+    });
   });
 
   // Populate copyright year

@@ -1,0 +1,72 @@
+.section {
+  padding: 8rem 0;
+
+  &__intro {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin: 0 0 3rem;
+  }
+
+  &__title-wrapper {
+    .section--about & {
+      @include text-color-split($color1: $c-white, $color2: $c-dark-blue);
+    }
+
+    .section--skills & {
+      @include text-color-split($color2: $c-orange);
+    }
+
+    .section--projects & {
+      @include text-color-split($color2: $c-light-blue);
+    }
+  }
+
+  &__highlight {
+    background: $c-orange;
+    color: $c-white;
+  }
+
+  &__image {
+    border-radius: 50%;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+
+  &--about {
+    background: $c-dark-blue;
+    color: $c-white;
+
+    @include mq-up(medium) {
+      .container {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap: 3rem;
+      }
+    }
+  }
+
+  &--skills {
+    background: $c-orange;
+  }
+
+  &--projects {
+    background: $c-light-blue;
+  }
+
+  &--404 {
+    background: $c-dark-blue;
+    color: $c-white;
+
+    .button {
+      @include button($bg: $c-blue, $fg: $c-white);
+    }
+  }
+
+  &--page-height {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+  }
+}

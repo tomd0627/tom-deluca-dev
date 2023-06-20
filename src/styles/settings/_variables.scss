@@ -1,10 +1,26 @@
 // Dimensions
-$site-width: 1400px;
-$mq-tablet: 768px;
+$site-width: 1440px;
+
+// Breakpoints
+$bp-small: 576px;
+$bp-medium: 768px;
+$bp-large: 1024px;
+$bp-x-large: 1300px;
 
 // Colors
 $c-white: #fff;
+$c-off-white: #efefef;
 $c-black: #000;
-$c-blue: #08f;
+$c-black-75: rgba($c-black, 0.75);
+$c-blue: #0088ff;
+$c-blue-755: rgba($c-blue, 0.75);
+$c-dark-blue: #0082b3;
+$c-light-blue: #bfeeff;
+$c-red: #ff0000;
+$c-orange: #ff7600;
 
 // Fonts
+$ff-body: "Lato", sans-serif;
+$ff-heading: "Raleway", sans-serif;
+
+$fw-bold: 700;

@@ -1,0 +1,63 @@
+// Media queries
+// reference: https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704
+
+@mixin mq-up($breakpoint) {
+  @if ($breakpoint == small) {
+    @media (min-width: $bp-small) {
+      @content;
+    }
+  } @else if ($breakpoint == medium) {
+    @media (min-width: $bp-medium) {
+      @content;
+    }
+  } @else if ($breakpoint == large) {
+    @media (min-width: $bp-large) {
+      @content;
+    }
+  } @else if ($breakpoint == x-large) {
+    @media (min-width: $bp-extra-large) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint does not exist: #{$breakpoint}";
+  }
+}
+
+// Text color split
+@mixin text-color-split(
+  $width: 70%,
+  $color1: $c-black,
+  $color2: $c-white,
+  $dir: 125deg
+) {
+  background: linear-gradient($dir, $color1 $width, $color2 $width);
+  display: inline-block;
+  margin: 0 0 0 -1rem;
+
+  > * {
+    background: linear-gradient($dir, $color2 $width, $color1 $width);
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin: 0;
+    padding: 1rem;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+// Button
+@mixin button($bg: $c-white, $fg: $c-black) {
+  border-radius: 25px;
+  background: $bg;
+  color: $fg;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: $fw-bold;
+  padding: 0.8rem;
+  transition: all 0.3s;
+
+  &:focus,
+  &:hover {
+    background: $fg;
+    color: $bg;
+  }
+}

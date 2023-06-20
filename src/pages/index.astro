@@ -1,16 +1,86 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
-<Layout title="TD/dev">
-    <Section cssClass="section section--about" title="about">
-        <h1>Abolut me</h1>
+<Layout
+    title="TomDeLuca/dev - Tom DeLuca front-end developer"
+    description="I'm Tom DeLuca. Im a front-end developer from New York and I love doing design translation."
+>
+    <Section cssClass="section--about" title="about">
+        <div class="section__intro">
+            <div class="section__title-wrapper">
+                <h2>About me</h2>
+            </div>
+            <p>
+                My name is <span class="section__highlight">Tom DeLuca</span>.
+            </p>
+            <p>I'm a front-end developer living in New York.</p>
+            <p>Some of my favorite things are:</p>
+            <ul>
+                <li>chocolate</li>
+                <li>pizza</li>
+                <li>anime</li>
+                <li>beer</li>
+            </ul>
+        </div>
+        <img
+            class="section__image"
+            src="headshot.jpg"
+            alt="Tom DeLuca headshot"
+        />
     </Section>
-    <Section cssClass="section section--skills" title="skills">
-        <h1>My Skills</h1>
+    <Section cssClass="section--skills" title="skills">
+        <div class="section__intro">
+            <div class="section__title-wrapper">
+                <h2>My Skills</h2>
+            </div>
+            <p>Here's what I do to help make the web look nice.</p>
+        </div>
+        <div class="skill-list">
+            <div class="skill-list__item">
+                <h3>Expert</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Design Translation</li>
+                    <li>Content Entry</li>
+                    <li>MJML</li>
+                    <li>Bootstrap</li>
+                    <li>Sitecore (Content Editor)</li>
+                </ul>
+            </div>
+            <div class="skill-list__item">
+                <h3>Intermediate</h3>
+                <ul>
+                    <li>Javascript</li>
+                    <li>jQuery</li>
+                    <li>React</li>
+                    <li>.NET</li>
+                </ul>
+            </div>
+            <div class="skill-list__item">
+                <h3>Beginner</h3>
+                <ul>
+                    <li>Vue</li>
+                    <li>Svelte</li>
+                </ul>
+            </div>
+        </div>
     </Section>
-    <Section cssClass="section section--projects" title="projects">
-        <h1>My Projects</h1>
+    <Section cssClass="section--projects" title="projects">
+        <div class="section__intro">
+            <div class="section__title-wrapper">
+                <h2>My Projects</h2>
+            </div>
+            <p>
+                Here are some of the recent projects I've worked on that I am
+                proud of.
+            </p>
+        </div>
+        <div class="project-list">
+            <ProjectCard />
+        </div>
     </Section>
 </Layout>

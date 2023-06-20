@@ -1,2 +1,39 @@
 .footer {
+  background: $c-off-white;
+  padding: 1.5em 0;
+
+  @include mq-up(medium) {
+    padding: 2rem 0;
+  }
+
+  &__inner {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 0;
+    text-align: center;
+
+    @include mq-up(medium) {
+      align-items: center;
+      flex-flow: row nowrap;
+      gap: 0;
+      justify-content: space-between;
+    }
+  }
+
+  &__links {
+    a {
+      font-size: 1.8rem;
+      margin: 0 0.5rem;
+
+      @include mq-up(medium) {
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+
+  &__tagline {
+    .fa-solid {
+      color: $c-red;
+    }
+  }
 }
