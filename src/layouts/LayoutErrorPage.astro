@@ -1,0 +1,31 @@
+---
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content=`${description}` />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="../src/styles/styles.scss" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+		<Footer />
+
+		<script src="../scripts/index.js"></script>
+	</body>
+</html>
