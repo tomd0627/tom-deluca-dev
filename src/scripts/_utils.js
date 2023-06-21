@@ -10,6 +10,10 @@ export const initializeUtills = () => {
     body.classList.toggle("show-nav");
   };
 
+  const closeHeaderNav = () => {
+    body.classList.remove("show-nav");
+  };
+
   menuToggle.addEventListener("click", toggleHeaderNav);
   menuToggle.addEventListener("keyup", (e) => {
     if (e.key === "Enter" || e.keyCode === 13) {
@@ -19,8 +23,12 @@ export const initializeUtills = () => {
 
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      body.classList.remove("show-nav");
+      closeHeaderNav();
     });
+  });
+
+  body.addEventListener("click", () => {
+    closeHeaderNav();
   });
 
   // Populate copyright year

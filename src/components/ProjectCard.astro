@@ -7,9 +7,16 @@ export interface Props {
 const { name, image } = Astro.props;
 ---
 
-<div class="project-card" style=`background: url("projects/${image}");`>
-    <h3>{name}</h3>
-    <p>
-        <slot />
-    </p>
+<div class="project-card-list__item-container">
+    <div class="project-card-list__item">
+        <div
+            class="project-card-list__item__front"
+            style=`background-image: url("projects/${image}");`
+        >
+            <h3>{name}</h3>
+        </div>
+        <div class="project-card-list__item__back">
+            <slot />
+        </div>
+    </div>
 </div>
