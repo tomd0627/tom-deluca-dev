@@ -1,0 +1,15 @@
+---
+export interface Props {
+    name: string;
+    cssClass: string;
+    icon: string;
+}
+
+const { name, cssClass, icon } = Astro.props;
+---
+
+<div class=`skill-card-list__item skill-card-list__item--${cssClass}`>
+    <i class=`skill-card-list__item__icon fa-solid fa-${icon}`></i>
+    <h3>{name}</h3>
+    <slot />
+</div>

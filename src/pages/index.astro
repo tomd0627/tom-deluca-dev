@@ -2,11 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import SkillCard from "../components/SkillCard.astro";
 ---
 
 <Layout
     title="TomDeLuca/dev - Tom DeLuca front-end developer"
-    description="I'm Tom DeLuca. Im a front-end developer from New York and I love doing design translation."
+    description="I'm a front-end developer living in New York."
 >
     <Section cssClass="section--about" title="about">
         <div class="section__intro">
@@ -38,10 +39,8 @@ import ProjectCard from "../components/ProjectCard.astro";
             </div>
             <p>Here's what I do to help make the web look nice.</p>
         </div>
-        <div class="skill-list">
-            <div class="skill-list__item skill-list__item--expert">
-                <i class="skill-list__item__icon fa-solid fa-face-smile"></i>
-                <h3>Expert</h3>
+        <div class="skill-card-list">
+            <SkillCard name="Expert" cssClass="expert" icon="face-smile">
                 <ul>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -52,10 +51,12 @@ import ProjectCard from "../components/ProjectCard.astro";
                     <li>Sitecore (SXA, Content Editor)</li>
                     <li>Storybook</li>
                 </ul>
-            </div>
-            <div class="skill-list__item skill-list__item--intermediate">
-                <i class="skill-list__item__icon fa-solid fa-face-meh"></i>
-                <h3>Intermediate</h3>
+            </SkillCard>
+            <SkillCard
+                name="Intermediate"
+                cssClass="intermediate"
+                icon="face-meh"
+            >
                 <ul>
                     <li>Javascript</li>
                     <li>jQuery</li>
@@ -63,15 +64,13 @@ import ProjectCard from "../components/ProjectCard.astro";
                     <li>Angular</li>
                     <li>.NET</li>
                 </ul>
-            </div>
-            <div class="skill-list__item skill-list__item--beginner">
-                <i class="skill-list__item__icon fa-solid fa-face-frown"></i>
-                <h3>Beginner</h3>
+            </SkillCard>
+            <SkillCard name="Beginner" cssClass="beginner" icon="face-frown">
                 <ul>
                     <li>Vue</li>
                     <li>Svelte</li>
                 </ul>
-            </div>
+            </SkillCard>
         </div>
     </Section>
     <Section cssClass="section--projects" title="projects">
@@ -85,7 +84,24 @@ import ProjectCard from "../components/ProjectCard.astro";
             </p>
         </div>
         <div class="project-card-list">
-            <ProjectCard />
+            <ProjectCard name="Cencora" image="cencora.jpg">
+                <p>test</p>
+            </ProjectCard>
+            <ProjectCard name="Corbion" image="corbion.jpg">
+                <p>test</p>
+            </ProjectCard>
+            <ProjectCard name="Russel Reynolds Associates" image="rra.jpg">
+                <p>test</p>
+            </ProjectCard>
+            <ProjectCard name="Orco Bank" image="orco.jpg">
+                <p>test</p>
+            </ProjectCard>
+            <ProjectCard name="AmerisourceBergen" image="ab.jpg">
+                <p>test</p>
+            </ProjectCard>
+            <ProjectCard name="American Society of Hematology" image="ash.jpg">
+                <p>test</p>
+            </ProjectCard>
         </div>
     </Section>
 </Layout>

@@ -1,4 +1,4 @@
-.skill-list {
+.skill-card-list {
   @include mq-up(medium) {
     display: flex;
     flex-flow: row wrap;
@@ -18,11 +18,12 @@
     }
 
     @include mq-up(medium) {
-      margin: 0;
+      margin: 0 0 1.5rem;
       flex: 0 calc(50% - 1rem);
     }
 
     @include mq-up(large) {
+      margin: 0;
       flex: 1;
     }
 
@@ -38,15 +39,15 @@
         top: -2rem;
       }
 
-      .skill-list__item--expert & {
+      .skill-card-list__item--expert & {
         color: $c-green;
       }
 
-      .skill-list__item--intermediate & {
+      .skill-card-list__item--intermediate & {
         color: $c-yellow;
       }
 
-      .skill-list__item--beginner & {
+      .skill-card-list__item--beginner & {
         color: $c-red;
       }
     }

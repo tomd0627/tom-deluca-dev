@@ -1,4 +1,15 @@
 ---
+export interface Props {
+    name: string;
+    image: string;
+}
+
+const { name, image } = Astro.props;
 ---
 
-<div class="project"></div>
+<div class="project-card" style=`background: url("projects/${image}");`>
+    <h3>{name}</h3>
+    <p>
+        <slot />
+    </p>
+</div>
