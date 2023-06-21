@@ -39,7 +39,8 @@ import ProjectCard from "../components/ProjectCard.astro";
             <p>Here's what I do to help make the web look nice.</p>
         </div>
         <div class="skill-list">
-            <div class="skill-list__item">
+            <div class="skill-list__item skill-list__item--expert">
+                <i class="skill-list__item__icon fa-solid fa-face-smile"></i>
                 <h3>Expert</h3>
                 <ul>
                     <li>HTML</li>
@@ -48,19 +49,23 @@ import ProjectCard from "../components/ProjectCard.astro";
                     <li>Content Entry</li>
                     <li>MJML</li>
                     <li>Bootstrap</li>
-                    <li>Sitecore (Content Editor)</li>
+                    <li>Sitecore (SXA, Content Editor)</li>
+                    <li>Storybook</li>
                 </ul>
             </div>
-            <div class="skill-list__item">
+            <div class="skill-list__item skill-list__item--intermediate">
+                <i class="skill-list__item__icon fa-solid fa-face-meh"></i>
                 <h3>Intermediate</h3>
                 <ul>
                     <li>Javascript</li>
                     <li>jQuery</li>
                     <li>React</li>
+                    <li>Angular</li>
                     <li>.NET</li>
                 </ul>
             </div>
-            <div class="skill-list__item">
+            <div class="skill-list__item skill-list__item--beginner">
+                <i class="skill-list__item__icon fa-solid fa-face-frown"></i>
                 <h3>Beginner</h3>
                 <ul>
                     <li>Vue</li>
@@ -79,7 +84,7 @@ import ProjectCard from "../components/ProjectCard.astro";
                 proud of.
             </p>
         </div>
-        <div class="project-list">
+        <div class="project-card-list">
             <ProjectCard />
         </div>
     </Section>

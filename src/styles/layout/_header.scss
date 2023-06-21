@@ -1,5 +1,5 @@
 .header {
-  background: $c-blue-755;
+  background: $c-blue-75;
   color: $c-white;
   left: 0;
   padding: 1.5em 0;
@@ -73,7 +73,7 @@
   }
 
   &__nav {
-    background: $c-black-75;
+    background: $c-blue-75;
     left: 0;
     margin: 0 -2rem;
     max-height: 0;
@@ -108,7 +108,15 @@
           padding: 1rem 0;
 
           @include mq-up(medium) {
-            padding: 0.5rem 0 0.5rem 2rem;
+            border-bottom: 2px solid transparent;
+            margin: 0 0 0 2.5rem;
+            padding: 0.5rem 0;
+            transition: all 0.3s;
+
+            &:focus,
+            &:hover {
+              border-color: $c-white;
+            }
           }
         }
       }
