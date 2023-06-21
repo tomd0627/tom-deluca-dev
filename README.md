@@ -1,3 +1,3 @@
 # TomDeLuca/dev
 
-Just a small one-page website about myself.
+A small, one-page site about myself.
