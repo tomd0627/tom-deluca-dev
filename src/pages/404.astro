@@ -1,18 +1,19 @@
 ---
 import Section from "../components/Section.astro";
+import SectionIntro from "../components/SectionIntro.astro";
 import LayoutErrorPage from "../layouts/LayoutErrorPage.astro";
 ---
 
 <LayoutErrorPage
-    title="TomDeLuca/dev - 404"
+    title="Tom DeLuca | 404"
     description="404. This page can't be found."
 >
     <Section cssClass="section--vertical-center section--404" title="404">
         <div class="align-center">
-            <div class="section__intro">
+            <SectionIntro>
                 <h1>Whoops! You broke the internet :)</h1>
                 <p>Whatever you were looking for isn't here.</p>
-            </div>
+            </SectionIntro>
             <p>
                 <a href="/" class="button">Go back home</a>
             </p>

@@ -1,0 +1,11 @@
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="section__title-wrapper">
+    <h2>{title}</h2>
+</div>

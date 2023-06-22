@@ -31,5 +31,15 @@
     .fa-solid {
       color: $c-red;
     }
+
+    &__sentence {
+      display: block;
+      margin: 0.2rem 0;
+
+      @include mq-up(medium) {
+        display: inline;
+        margin: 0 0 0 0.5rem;
+      }
+    }
   }
 }

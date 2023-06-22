@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillCard from "../components/SkillCard.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import SectionTitle from "../components/SectionTitle.astro";
 ---
 
 <Layout
@@ -10,10 +12,8 @@ import SkillCard from "../components/SkillCard.astro";
     description="I'm a front-end developer living in New York. I love doing design translation and working with others to make beautiful websites. I'm an expert when it comes to efficiantly delivering HTML, CSS and Javascript for others to implement."
 >
     <Section cssClass="section--about" title="about">
-        <div class="section__intro">
-            <div class="section__title-wrapper">
-                <h2>About me</h2>
-            </div>
+        <SectionIntro>
+            <SectionTitle title="About me" />
             <p>
                 Hello. My name is <span class="section__highlight"
                     >Tom DeLuca</span
@@ -31,7 +31,7 @@ import SkillCard from "../components/SkillCard.astro";
                 friends, or at one of the local bars having a beer or two on a
                 Friday night.
             </p>
-        </div>
+        </SectionIntro>
         <img
             class="section__image"
             src="images/headshot.jpg"
@@ -39,12 +39,10 @@ import SkillCard from "../components/SkillCard.astro";
         />
     </Section>
     <Section cssClass="section--skills" title="skills">
-        <div class="section__intro">
-            <div class="section__title-wrapper">
-                <h2>My Skills</h2>
-            </div>
+        <SectionIntro>
+            <SectionTitle title="My skills" />
             <p>Here's what I do to help make the web look nice.</p>
-        </div>
+        </SectionIntro>
         <div class="skill-card-list">
             <SkillCard name="Expert" cssClass="expert" icon="face-smile">
                 <ul>
@@ -81,10 +79,8 @@ import SkillCard from "../components/SkillCard.astro";
         </div>
     </Section>
     <Section cssClass="section--projects" title="projects">
-        <div class="section__intro">
-            <div class="section__title-wrapper">
-                <h2>My Projects</h2>
-            </div>
+        <SectionIntro>
+            <SectionTitle title="My projects" />
             <p>
                 Here are some of the recent projects I've worked on that I am
                 proud of.
@@ -93,7 +89,7 @@ import SkillCard from "../components/SkillCard.astro";
                 <span class="hide-desktop">Click</span>
                 <span class="hide-mobile">Hover over</span> a card to see more details.
             </p>
-        </div>
+        </SectionIntro>
         <div class="project-card-list">
             <ProjectCard name="Cencora" image="cencora.jpg">
                 <p>
