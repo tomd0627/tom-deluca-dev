@@ -87,6 +87,14 @@ img {
   }
 }
 
+.hide-mobile {
+  display: none;
+
+  @include mq-up(large) {
+    display: inline;
+  }
+}
+
 .hide-desktop {
   @include mq-up(large) {
     display: none;

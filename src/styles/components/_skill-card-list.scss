@@ -34,9 +34,13 @@
       top: -1rem;
 
       @include mq-up(medium) {
+        font-size: 6rem;
+        top: -2rem;
+      }
+
+      @include mq-up(x-large) {
         font-size: 8rem;
         right: 2rem;
-        top: -2rem;
       }
 
       .skill-card-list__item--expert & {

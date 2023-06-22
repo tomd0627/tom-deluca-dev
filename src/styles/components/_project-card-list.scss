@@ -18,10 +18,15 @@
     transition: all 0.5s;
     width: 100%;
 
-    .project-card-list__item-container.active &,
-    .project-card-list__item-container:focus &,
-    .project-card-list__item-container:hover & {
+    .project-card-list__item-container.active & {
       transform: rotateY(180deg);
+    }
+
+    @include mq-up(large) {
+      .project-card-list__item-container:focus &,
+      .project-card-list__item-container:hover & {
+        transform: rotateY(180deg);
+      }
     }
 
     &-container {
@@ -41,6 +46,7 @@
     &__back {
       align-items: center;
       backface-visibility: hidden;
+      border-radius: 0.5rem;
       display: flex;
       flex-flow: column nowrap;
       height: 100%;
@@ -62,6 +68,7 @@
 
       &::before {
         background: $c-black-50;
+        border-radius: 0.5rem;
         content: "";
         display: block;
         height: 100%;
@@ -83,7 +90,7 @@
           line-height: 2.5rem;
         }
 
-        @include mq-up(large) {
+        @include mq-up(x-large) {
           font-size: 2.5rem;
           line-height: 2.7rem;
         }

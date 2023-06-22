@@ -6,8 +6,8 @@ import SkillCard from "../components/SkillCard.astro";
 ---
 
 <Layout
-    title="TomDeLuca/dev - Tom DeLuca front-end developer"
-    description="I'm a front-end developer living in New York."
+    title="Tom DeLuca | Front-End Developer"
+    description="I'm a front-end developer living in New York. I love doing design translation and working with others to make beautiful websites. I'm an expert when it comes to efficiantly delivering HTML, CSS and Javascript for others to implement."
 >
     <Section cssClass="section--about" title="about">
         <div class="section__intro">
@@ -15,16 +15,22 @@ import SkillCard from "../components/SkillCard.astro";
                 <h2>About me</h2>
             </div>
             <p>
-                My name is <span class="section__highlight">Tom DeLuca</span>.
+                Hello. My name is <span class="section__highlight"
+                    >Tom DeLuca</span
+                >.
             </p>
-            <p>I'm a front-end developer living in New York.</p>
-            <p>Some of my favorite things are:</p>
-            <ul>
-                <li>chocolate</li>
-                <li>pizza</li>
-                <li>anime</li>
-                <li>beer</li>
-            </ul>
+            <p>
+                I'm a front-end developer living in New York. I love doing
+                design translation and working with others to make beautiful
+                websites. I'm an expert when it comes to efficiantly delivering
+                HTML, CSS and Javascript for implementation.
+            </p>
+            <p>
+                When I'm not doing web stuff, I can usually be found watching
+                anime or playing video games, hanging out with my family or
+                friends, or at one of the local bars having a beer or two on a
+                Friday night.
+            </p>
         </div>
         <img
             class="section__image"
@@ -83,7 +89,10 @@ import SkillCard from "../components/SkillCard.astro";
                 Here are some of the recent projects I've worked on that I am
                 proud of.
             </p>
-            <p class="hide-desktop">Click on a card to see details.</p>
+            <p>
+                <span class="hide-desktop">Click</span>
+                <span class="hide-mobile">Hover over</span> a card to see more details.
+            </p>
         </div>
         <div class="project-card-list">
             <ProjectCard name="Cencora" image="cencora.jpg">

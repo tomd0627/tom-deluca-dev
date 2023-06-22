@@ -2,10 +2,6 @@
   background: $c-off-white;
   padding: 1.5em 0;
 
-  @include mq-up(medium) {
-    padding: 2rem 0;
-  }
-
   &__inner {
     display: flex;
     flex-flow: column nowrap;
