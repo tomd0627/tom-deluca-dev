@@ -9,6 +9,11 @@ export const initializeProjectCard = () => {
       card.addEventListener("click", () => {
         card.classList.toggle("active");
       });
+      card.addEventListener("keyup", (e) => {
+        if (e.key === "Enter" || e.keyCode === 13) {
+          card.classList.toggle("active");
+        }
+      });
     });
   };
 
