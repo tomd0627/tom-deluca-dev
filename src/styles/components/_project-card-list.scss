@@ -1,12 +1,9 @@
 .project-card-list {
   @include mq-up(medium) {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include mq-up(large) {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 -1rem;
   }
 
   &__item {
@@ -38,7 +35,13 @@
       }
 
       @include mq-up(medium) {
+        flex: 0 0 50%;
         margin: 0;
+        padding: 0 1rem 2rem;
+      }
+
+      @include mq-up(large) {
+        flex: 0 0 33.33%;
       }
     }
 
