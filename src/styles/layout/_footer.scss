@@ -5,18 +5,57 @@
   &__inner {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem 0;
     text-align: center;
 
     @include mq-up(medium) {
       align-items: center;
       flex-flow: row nowrap;
       gap: 0;
-      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  &__sentence {
+    display: block;
+    margin: 0.2rem 0;
+
+    @include mq-up(medium) {
+      display: inline;
+
+      .footer__copyright & {
+        margin: 0 0.5rem 0 0;
+      }
+
+      .footer__tagline & {
+        margin: 0 0 0 0.5rem;
+      }
+    }
+  }
+
+  &__copyright,
+  &__links,
+  &__tagline {
+    @include mq-up(medium) {
+      flex: 1 0 33.33%;
+    }
+  }
+
+  &__copyright {
+    @include mq-up(medium) {
+      text-align: left;
     }
   }
 
   &__links {
+    margin: 0 0 1rem 0;
+    order: -1;
+
+    @include mq-up(medium) {
+      margin: 0;
+      order: 0;
+      text-align: center;
+    }
+
     a {
       font-size: 1.8rem;
       margin: 0 0.5rem;
@@ -28,18 +67,12 @@
   }
 
   &__tagline {
-    .fa-solid {
-      color: $c-red;
+    @include mq-up(medium) {
+      text-align: right;
     }
 
-    &__sentence {
-      display: block;
-      margin: 0.2rem 0;
-
-      @include mq-up(medium) {
-        display: inline;
-        margin: 0 0 0 0.5rem;
-      }
+    .fa-solid {
+      color: $c-red;
     }
   }
 }
