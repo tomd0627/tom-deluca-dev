@@ -40,12 +40,6 @@
     }
   }
 
-  &__copyright {
-    @include mq-up(medium) {
-      text-align: left;
-    }
-  }
-
   &__links {
     margin: 0 0 1rem 0;
     order: -1;

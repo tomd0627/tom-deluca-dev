@@ -8,128 +8,133 @@ import SectionTitle from "../components/SectionTitle.astro";
 ---
 
 <Layout
-    title="Tom DeLuca | Front-End Developer"
-    description="I'm a front-end developer living in New York. I love doing design translation and working with others to make beautiful websites. I'm an expert when it comes to efficiantly delivering HTML, CSS and JavaScript for others to implement."
+  title="Tom DeLuca | Front-End Developer"
+  description="I'm a front-end developer living in New York. I love doing design translation and working with others to make beautiful websites. I'm an expert when it comes to efficiantly delivering HTML, CSS and JavaScript for others to implement."
 >
-    <Section cssClass="section--about" title="about">
-        <SectionIntro>
-            <SectionTitle title="About me" />
-            <p>
-                Hello. My name is <span class="section__highlight"
-                    >Tom DeLuca</span
-                >.
-            </p>
-            <p>
-                I'm a front-end developer living in New York. I love doing
-                design translation and working with others to make beautiful
-                websites. I'm an expert when it comes to efficiently and
-                accurately delivering HTML, CSS and JavaScript for
-                implementation.
-            </p>
-            <p>
-                When I'm not doing web stuff, I can usually be found watching
-                anime or playing video games, hanging out with my family or
-                friends, or at one of the local bars having a beer or two on a
-                Friday night.
-            </p>
-        </SectionIntro>
-        <img
-            class="section__image"
-            src="images/headshot.jpg"
-            alt="Tom DeLuca headshot"
-        />
-    </Section>
-    <Section cssClass="section--skills" title="skills">
-        <SectionIntro>
-            <SectionTitle title="My skills" />
-            <p>Here's what I do to help make the web look nice.</p>
-        </SectionIntro>
-        <div class="skill-card-list">
-            <SkillCard name="Expert" cssClass="expert" icon="face-smile">
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>jQuery</li>
-                    <li>Design Translation</li>
-                    <li>Content Entry</li>
-                    <li>MJML</li>
-                    <li>Bootstrap</li>
-                    <li>Sitecore (SXA, Content Editor)</li>
-                    <li>Storybook</li>
-                </ul>
-            </SkillCard>
-            <SkillCard
-                name="Intermediate"
-                cssClass="intermediate"
-                icon="face-meh"
-            >
-                <ul>
-                    <li>React</li>
-                    <li>TypeScript</li>
-                    <li>Angular</li>
-                    <li>Handlebars.js</li>
-                    <li>Mustache.js</li>
-                    <li>Nunjucks</li>
-                    <li>.NET</li>
-                </ul>
-            </SkillCard>
-            <SkillCard name="Learning" cssClass="learning" icon="face-frown">
-                <ul>
-                    <li>Vue.js</li>
-                    <li>Svelte</li>
-                </ul>
-            </SkillCard>
-        </div>
-    </Section>
-    <Section cssClass="section--projects" title="projects">
-        <SectionIntro>
-            <SectionTitle title="My projects" />
-            <p>
-                Here are some of the recent projects I've worked on that I am
-                proud of.
-            </p>
-            <p>
-                <span class="hide-desktop">Click</span>
-                <span class="hide-mobile">Hover over</span> a card to see more details.
-            </p>
-        </SectionIntro>
-        <div class="project-card-list">
-            <ProjectCard name="Cencora" image="cencora.jpg">
-                <p>
-                    Splash page implementation for a new brand announcement,
-                    which used Storybook and GSAP animations.
-                </p>
-            </ProjectCard>
-            <ProjectCard name="Corbion" image="corbion.jpg">
-                <p>
-                    Bug fixing and other updates to various components of the
-                    already built Sitecore site before launch.
-                </p>
-            </ProjectCard>
-            <ProjectCard name="Russel Reynolds Associates" image="rra.jpg">
-                <p>
-                    Design translation of components using Storybook so they
-                    could be lifted into a new Sitecore instance.
-                </p>
-            </ProjectCard>
-            <ProjectCard name="Orco Bank" image="orco.jpg">
-                <p>
-                    Styling of SXA components for a Sitecore re-platform effort.
-                </p>
-            </ProjectCard>
-            <ProjectCard name="AmerisourceBergen" image="ab.jpg">
-                <p>
-                    Style updates and creation of new components to align with a
-                    rebrand effort for existing business units.
-                </p>
-            </ProjectCard>
-            <ProjectCard name="American Society of Hematology" image="ash.jpg">
-                <p>
-                    Initial creation and styling of site components. Extensive
-                    content entry and bug fixing to meet a site launch.
-                </p>
-            </ProjectCard>
-        </div>
-    </Section>
+  <Section cssClass="section--about" title="about">
+    <SectionIntro>
+      <SectionTitle title="About me" />
+      <p>
+        Hello. My name is <span class="section__highlight">Tom DeLuca</span>.
+      </p>
+      <p>
+        I'm a front-end developer living in New York. I love doing design
+        translation and working with others to make beautiful websites. I'm an
+        expert when it comes to efficiently and accurately delivering HTML, CSS
+        and JavaScript for implementation.
+      </p>
+      <p>
+        When I'm not doing web stuff, I can usually be found watching anime or
+        playing video games, hanging out with my family or friends, or at one of
+        the local bars having a beer or two on a Friday night.
+      </p>
+    </SectionIntro>
+    <img
+      class="section__image"
+      src="images/headshot.jpg"
+      alt="Tom DeLuca headshot"
+    />
+  </Section>
+  <Section cssClass="section--skills" title="skills">
+    <SectionIntro>
+      <SectionTitle title="My skills" />
+      <p>Here's what I do to help make the web look nice.</p>
+    </SectionIntro>
+    <div class="skill-card-list">
+      <SkillCard name="Expert" cssClass="expert" icon="face-smile">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>jQuery</li>
+          <li>Design Translation</li>
+          <li>Content Entry</li>
+          <li>MJML</li>
+          <li>Bootstrap</li>
+          <li>Sitecore (SXA, Content Editor)</li>
+          <li>Storybook</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </SkillCard>
+      <SkillCard name="Intermediate" cssClass="intermediate" icon="face-meh">
+        <ul>
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>Angular</li>
+          <li>Handlebars.js</li>
+          <li>Mustache.js</li>
+          <li>Nunjucks</li>
+          <li>.NET</li>
+        </ul>
+      </SkillCard>
+      <SkillCard name="Learning" cssClass="learning" icon="face-frown">
+        <ul>
+          <li>Vue.js</li>
+          <li>Svelte</li>
+        </ul>
+      </SkillCard>
+    </div>
+  </Section>
+  <Section cssClass="section--projects" title="projects">
+    <SectionIntro>
+      <SectionTitle title="My projects" />
+      <p>
+        Here are some of the recent projects I've worked on that I am proud of.
+      </p>
+      <p>
+        <span class="hide-desktop">Click</span>
+        <span class="hide-mobile">Hover over</span> a card to see more details.
+      </p>
+    </SectionIntro>
+    <div class="project-card-list">
+      <ProjectCard name="CIGA" image="ciga.png">
+        <h4>California Insurance Guarantee Association</h4>
+        <p>
+          Utilized Tailwind CSS to build components for a React/Next.js
+          implementation.
+        </p>
+      </ProjectCard>
+      <ProjectCard name="Cencora" image="cencora.png">
+        <h4>Cencora</h4>
+        <p>
+          Splash page implementation for a new brand announcement, which
+          utilized Storybook and GSAP animations.
+        </p>
+      </ProjectCard>
+      <ProjectCard name="Corbion" image="corbion.png">
+        <h4>Corbion</h4>
+        <p>
+          Style updates and bug fixing for various components of the already
+          built Sitecore site before initial launch.
+        </p>
+      </ProjectCard>
+      <ProjectCard name="RRA" image="rra.png">
+        <h4>Russel Reynolds Associates</h4>
+        <p>
+          Design translation of components using Storybook for use in a new
+          Sitecore instance.
+        </p>
+      </ProjectCard>
+      <ProjectCard name="AB/OB" image="ob.png">
+        <h4>Aruba Bank/Orco Bank</h4>
+        <p>
+          Design translation of Sitecore SXA components for a replatform effort.
+        </p>
+      </ProjectCard>
+      <ProjectCard name="AB" image="ab.png">
+        <h4>AmerisourceBergen</h4>
+        <p>
+          Style updates to existing components and design translation of new
+          components to align with a rebrand effort for existing business units.
+        </p>
+      </ProjectCard>
+      <ProjectCard name="ASH" image="ash.png">
+        <h4>American Society of Hematology</h4>
+        <p>
+          Initial design translation of components. Extensive content entry and
+          bug fixing to meet a site launch deadline.
+        </p>
+      </ProjectCard>
+    </div>
+  </Section>
 </Layout>
