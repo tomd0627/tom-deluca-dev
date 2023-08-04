@@ -5,18 +5,20 @@ import LayoutErrorPage from "../layouts/LayoutErrorPage.astro";
 ---
 
 <LayoutErrorPage
-    title="Tom DeLuca | 404"
-    description="404. This page can't be found."
+  title="Tom DeLuca | 404"
+  description="404. This page can't be found."
 >
-    <Section cssClass="section--vertical-center section--404" title="404">
-        <div class="align-center">
-            <SectionIntro>
-                <h1>Whoops! You broke the internet :)</h1>
-                <p>Whatever you were looking for isn't here.</p>
-            </SectionIntro>
-            <p>
-                <a href="/" class="button">Go back home</a>
-            </p>
-        </div>
-    </Section>
+  <Section cssClass="section--vertical-center section--404" title="404">
+    <div class="align-center">
+      <SectionIntro>
+        <h1>Whoops! You broke the internet :)</h1>
+        <p>Whatever you were looking for isn't here.</p>
+      </SectionIntro>
+      <div class="animate-fade">
+        <p>
+          <a href="/" class="button">Go back home</a>
+        </p>
+      </div>
+    </div>
+  </Section>
 </LayoutErrorPage>

@@ -54,8 +54,15 @@
       font-size: 1.8rem;
       margin: 0 0.5rem;
 
-      @include mq-up(medium) {
-        margin: 0 1rem 0 0;
+      .fa-brands {
+        transition: all 0.3s;
+      }
+
+      &:focus,
+      &:hover {
+        .fa-brands {
+          transform: scale(1.2);
+        }
       }
     }
   }

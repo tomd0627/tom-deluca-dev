@@ -27,7 +27,7 @@
     }
 
     &-container {
-      margin: 0 0 3rem;
+      margin: 0 0 2rem;
       perspective: 80rem;
 
       &:last-child {
@@ -36,8 +36,7 @@
 
       @include mq-up(medium) {
         flex: 0 0 50%;
-        margin: 0;
-        padding: 0 1rem 2rem;
+        padding: 0 1rem;
       }
 
       @include mq-up(large) {
