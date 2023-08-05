@@ -1,8 +1,9 @@
 export const initializeUtills = () => {
-  // Nav toggle on mobile
+  // Header utilities
   const header = document.querySelector(".header");
 
   if (header !== null) {
+    // Nav toggle on mobile
     const body = document.body;
     const menuToggle = document.querySelector(".header__menu-toggle");
     const menuLinks = document.querySelectorAll(".header__nav a");
@@ -25,8 +26,15 @@ export const initializeUtills = () => {
     });
 
     menuLinks.forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (e) => {
         closeHeaderNav();
+
+        // Smooth scroll anchor links
+        e.preventDefault();
+        let linkHref = link.getAttribute("href");
+        let section = document.querySelector(linkHref);
+
+        section.scrollIntoView({ behavior: "smooth" });
       });
     });
 
@@ -35,10 +43,11 @@ export const initializeUtills = () => {
     });
   }
 
-  // Populate copyright year
+  // Footer utilities
   const footer = document.querySelector(".footer");
 
   if (footer !== null) {
+    // Populate copyright year
     const date = new Date();
     const year = date.getFullYear();
     const copyrightYear = document.querySelector(".footer__copyright-year");
