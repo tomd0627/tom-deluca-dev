@@ -8,8 +8,8 @@ export const initializeAnimations = () => {
   const slideAnimation = (
     slideElements = gsap.utils.toArray(".animate-slide"),
     slideYVal = 50,
-    slideStartVal = "top 80%",
-    slideEndVal = "bottom 30%"
+    slideStartVal = "top 85%",
+    slideEndVal = "bottom 15%"
   ) => {
     gsap.set(slideElements, {
       opacity: 0,
@@ -49,8 +49,8 @@ export const initializeAnimations = () => {
   // Fade animation
   const fadeAnimation = (
     fadeElements = gsap.utils.toArray(".animate-fade"),
-    fadeStart = "top 80%",
-    fadeEnd = "bottom 20%"
+    fadeStart = "top 85%",
+    fadeEnd = "bottom 15%"
   ) => {
     fadeElements.forEach((fadeElement) => {
       gsap.from(fadeElement, {

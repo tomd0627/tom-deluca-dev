@@ -14,16 +14,16 @@ import SectionTitle from "../components/SectionTitle.astro";
   <Section cssClass="section--about" title="about">
     <SectionIntro>
       <SectionTitle title="About me" />
-      <p>
+      <p class="animate-fade">
         Hello. My name is <span class="section__highlight">Tom DeLuca</span>.
       </p>
-      <p>
+      <p class="animate-fade">
         I'm a front-end developer living in New York. I love doing design
         translation and working with others to make beautiful websites. I'm an
         expert when it comes to efficiently and accurately delivering HTML, CSS
         and JavaScript for implementation.
       </p>
-      <p>
+      <p class="animate-fade">
         When I'm not doing web stuff, I can usually be found watching anime or
         playing video games, hanging out with my family or friends, or at one of
         the local bars having a beer or two on a Friday night.
@@ -40,7 +40,9 @@ import SectionTitle from "../components/SectionTitle.astro";
   <Section cssClass="section--skills" title="skills">
     <SectionIntro>
       <SectionTitle title="My skills" />
-      <p>Here's what I do to help make the web look nice.</p>
+      <p class="animate-fade">
+        Here's what I do to help make the web look nice.
+      </p>
     </SectionIntro>
     <div class="skill-card-list">
       <SkillCard name="Expert" cssClass="expert" icon="face-smile">
@@ -81,10 +83,10 @@ import SectionTitle from "../components/SectionTitle.astro";
   <Section cssClass="section--projects" title="projects">
     <SectionIntro>
       <SectionTitle title="My projects" />
-      <p>
+      <p class="animate-fade">
         Here are some of the recent projects I've worked on that I am proud of.
       </p>
-      <p>
+      <p class="animate-fade">
         <span class="hide-desktop">Click</span>
         <span class="hide-mobile">Hover over</span> a card to see more details.
       </p>
