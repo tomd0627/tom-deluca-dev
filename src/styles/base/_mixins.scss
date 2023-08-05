@@ -32,15 +32,28 @@
 ) {
   background: linear-gradient($dir, $color1 $width, $color2 $width);
   display: inline-block;
-  margin: 0 0 0 -1rem;
+  position: relative;
+
+  &::before {
+    background: $color1;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    left: -100vw;
+    right: 100%;
+    z-index: 0;
+  }
 
   > * {
     background: linear-gradient($dir, $color2 $width, $color1 $width);
     background-clip: text;
     -webkit-background-clip: text;
     margin: 0;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0;
+    position: relative;
     -webkit-text-fill-color: transparent;
+    z-index: 1;
   }
 }
 

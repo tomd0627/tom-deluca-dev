@@ -19,6 +19,13 @@
     display: block;
     margin: 0.2rem 0;
 
+    a {
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     @include mq-up(medium) {
       display: inline;
 

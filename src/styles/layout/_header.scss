@@ -6,7 +6,12 @@
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1;
+  transition: all 0.3s;
+  z-index: 10;
+
+  .body-scroll-down & {
+    transform: translateY(-100%);
+  }
 
   a {
     color: $c-white;
@@ -34,15 +39,19 @@
     background: none;
     border: 0;
     cursor: pointer;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 6px;
     height: 30px;
+    justify-content: center;
+    padding: 0;
     position: relative;
     width: 40px;
 
     .bar {
       background: $c-white;
       display: block;
-      height: 2px;
-      margin: 5px auto;
+      height: 3px;
       opacity: 1;
       transform: translate(0) rotate(0);
       transition: all 0.3s;
@@ -50,7 +59,7 @@
 
       .show-nav & {
         &--top {
-          transform: translateY(7px) rotate(45deg);
+          transform: translateY(9px) rotate(45deg);
         }
 
         &--mid {
@@ -58,7 +67,7 @@
         }
 
         &--bot {
-          transform: translateY(-7px) rotate(-45deg);
+          transform: translateY(-9px) rotate(-45deg);
         }
       }
     }
@@ -78,10 +87,14 @@
     position: absolute;
     right: 0;
     top: calc(100% + 1.5rem);
-    transition: max-height 0.3s;
+    transition: all 0.3s;
 
     .show-nav & {
       max-height: 15rem;
+    }
+
+    .body-scroll-down & {
+      transform: translateY(-100%);
     }
 
     @include mq-up(medium) {
