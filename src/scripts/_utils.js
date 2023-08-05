@@ -31,8 +31,8 @@ export const initializeUtills = () => {
 
         // Smooth scroll anchor links
         e.preventDefault();
-        let linkHref = link.getAttribute("href");
-        let section = document.querySelector(linkHref);
+        const linkHref = link.getAttribute("href");
+        const section = document.querySelector(linkHref);
 
         section.scrollIntoView({ behavior: "smooth" });
       });
