@@ -27,15 +27,25 @@
   }
 
   &__image {
+    animation: morph infinite 15s 1s;
     border-radius: 50%;
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
     @include mq-up(medium) {
-      width: 50vw;
+      width: 40vw;
     }
 
-    @include mq-up(large) {
-      width: auto;
+    @keyframes morph {
+      0%,
+      100% {
+        border-radius: 50%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      50% {
+        border-radius: 0;
+        clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+      }
     }
   }
 
