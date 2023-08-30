@@ -5,6 +5,15 @@ import ProjectCard from "../components/ProjectCard.astro";
 import SkillCard from "../components/SkillCard.astro";
 import SectionIntro from "../components/SectionIntro.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+import { Image } from "astro:assets";
+import imgHeadshot from "../assets/images/headshot.png";
+import imgProjectCiga from "../assets/images/projects/ciga.png";
+import imgProjectCencora from "../assets/images/projects/cencora.png";
+import imgProjectCorbion from "../assets/images/projects/corbion.png";
+import imgProjectRra from "../assets/images/projects/rra.png";
+import imgProjectAruba from "../assets/images/projects/ob.png";
+import imgProjectAb from "../assets/images/projects/ab.png";
+import imgProjectAsh from "../assets/images/projects/ash.png";
 ---
 
 <Layout
@@ -29,12 +38,10 @@ import SectionTitle from "../components/SectionTitle.astro";
         the local bars having a beer or two on a Friday night.
       </p>
     </SectionIntro>
-    <img
+    <Image
       class="section__image animate-fade"
-      src="images/headshot.webp"
+      src={imgHeadshot}
       alt="Tom DeLuca headshot"
-      height="600"
-      width="600"
     />
   </Section>
   <Section cssClass="section--skills" title="skills">
@@ -92,48 +99,83 @@ import SectionTitle from "../components/SectionTitle.astro";
       </p>
     </SectionIntro>
     <div class="project-card-list">
-      <ProjectCard name="CIGA" image="ciga.webp">
+      <ProjectCard name="CIGA">
+        <Image
+          slot="project-card-image"
+          src={imgProjectCiga}
+          alt="California Insurance Guarantee Association website screenshot"
+        />
         <h4>California Insurance Guarantee Association</h4>
         <p>
           Utilized Tailwind CSS to build components for a React/Next.js
           implementation.
         </p>
       </ProjectCard>
-      <ProjectCard name="Cencora" image="cencora.webp">
+      <ProjectCard name="Cencora">
+        <Image
+          slot="project-card-image"
+          src={imgProjectCencora}
+          alt="Cencora website screenshot"
+        />
         <h4>Cencora</h4>
         <p>
           Splash page implementation for a new brand announcement, which
           utilized Storybook and GSAP animations.
         </p>
       </ProjectCard>
-      <ProjectCard name="Corbion" image="corbion.webp">
+      <ProjectCard name="Corbion">
+        <Image
+          slot="project-card-image"
+          src={imgProjectCorbion}
+          alt="Corbion website screenshot"
+        />
         <h4>Corbion</h4>
         <p>
           Style updates and bug fixing for various components of the already
           built Sitecore site before initial launch.
         </p>
       </ProjectCard>
-      <ProjectCard name="RRA" image="rra.webp">
+      <ProjectCard name="RRA">
+        <Image
+          slot="project-card-image"
+          src={imgProjectRra}
+          alt="Russel Reynolds Associates website screenshot"
+        />
         <h4>Russel Reynolds Associates</h4>
         <p>
           Design translation of components using Storybook for use in a new
           Sitecore instance.
         </p>
       </ProjectCard>
-      <ProjectCard name="AB/OB" image="ob.webp">
+      <ProjectCard name="AB/OB">
+        <Image
+          slot="project-card-image"
+          src={imgProjectAruba}
+          alt="Orco Bank website screenshot"
+        />
         <h4>Aruba Bank/Orco Bank</h4>
         <p>
           Design translation of Sitecore SXA components for a replatform effort.
         </p>
       </ProjectCard>
-      <ProjectCard name="AB" image="ab.webp">
+      <ProjectCard name="AB">
+        <Image
+          slot="project-card-image"
+          src={imgProjectAb}
+          alt="AmerisourceBergen website screenshot"
+        />
         <h4>AmerisourceBergen</h4>
         <p>
           Style updates to existing components and design translation of new
           components to align with a rebrand effort for existing business units.
         </p>
       </ProjectCard>
-      <ProjectCard name="ASH" image="ash.webp">
+      <ProjectCard name="ASH">
+        <Image
+          slot="project-card-image"
+          src={imgProjectAsh}
+          alt="American Society of Hematology website screenshot"
+        />
         <h4>American Society of Hematology</h4>
         <p>
           Initial design translation of components. Extensive content entry and

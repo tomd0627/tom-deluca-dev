@@ -1,18 +1,15 @@
 ---
 export interface Props {
   name: string;
-  image: string;
 }
 
-const { name, image } = Astro.props;
+const { name } = Astro.props;
 ---
 
 <div class="project-card-list__item-container animate-slide" tabindex="0">
   <div class="project-card-list__item">
-    <div
-      class="project-card-list__item__front"
-      style=`background-image: url("images/projects/${image}");`
-    >
+    <div class="project-card-list__item__front">
+      <slot name="project-card-image" />
       <h3>{name}</h3>
     </div>
     <div class="project-card-list__item__back">

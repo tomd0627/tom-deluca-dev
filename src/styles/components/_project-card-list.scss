@@ -80,6 +80,15 @@
         z-index: 0;
       }
 
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
+
       h3 {
         font-size: 1.8rem;
         line-height: 2rem;
