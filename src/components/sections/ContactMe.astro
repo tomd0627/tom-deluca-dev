@@ -16,9 +16,21 @@ import SectionTitle from "../elements/SectionTitle.astro";
     class="form"
     name="contact-form"
     method="POST"
+    netlify-honeypot="name-bot"
     data-netlify="true"
     action="/contact-form-success"
   >
+    <label class="form-field form-field-hidden">
+      <input
+        name="name-bot"
+        placeholder="Don't fill this out if you're human"
+        class="form-input form-input--text"
+        type="text"
+        tabindex="-1"
+        autocomplete="off"
+      />
+      <span class="form-label">Don't fill this out if you're human</span>
+    </label>
     <label class="form-field animate-fade">
       <input
         id="txtName"
@@ -28,7 +40,10 @@ import SectionTitle from "../elements/SectionTitle.astro";
         type="text"
         required
       />
-      <span class="form-label">Your name</span>
+      <span class="form-label">
+        Your name
+        <span class="form-required">*</span>
+      </span>
     </label>
     <label class="form-field animate-fade">
       <input
@@ -39,7 +54,10 @@ import SectionTitle from "../elements/SectionTitle.astro";
         type="email"
         required
       />
-      <span class="form-label">Your email</span>
+      <span class="form-label">
+        Your email
+        <span class="form-required">*</span>
+      </span>
     </label>
     <label class="form-field animate-fade">
       <textarea
@@ -48,7 +66,10 @@ import SectionTitle from "../elements/SectionTitle.astro";
         placeholder="Your message"
         class="form-input form-input--textarea"
         required></textarea>
-      <span class="form-label">Your message</span>
+      <span class="form-label">
+        Your message
+        <span class="form-required">*</span>
+      </span>
     </label>
     <div class="form-field animate-fade">
       <button class="button form-input form-input--button" type="submit"

@@ -12,6 +12,15 @@
     display: flex;
     flex-flow: column nowrap;
     position: relative;
+
+    &-hidden {
+      height: 0;
+      left: -9999rem;
+      opacity: 0;
+      position: absolute;
+      width: 0;
+      z-index: -1;
+    }
   }
 
   &-input {
@@ -61,5 +70,9 @@
     position: absolute;
     top: 1rem;
     transition: all 0.3s;
+  }
+
+  &-required {
+    color: $c-red;
   }
 }
