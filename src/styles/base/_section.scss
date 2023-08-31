@@ -19,6 +19,10 @@
     .section--projects & {
       @include text-color-split($color2: $c-light-blue);
     }
+
+    .section--contact & {
+      @include text-color-split($color2: $c-yellow);
+    }
   }
 
   &__highlight {
@@ -73,7 +77,11 @@
     background: $c-light-blue;
   }
 
-  &--404 {
+  &--contact {
+    background: $c-yellow;
+  }
+
+  &--full-height {
     background: $c-dark-blue;
     color: $c-white;
 

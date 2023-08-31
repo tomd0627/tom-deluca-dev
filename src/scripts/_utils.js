@@ -28,7 +28,7 @@ export const initializeUtills = () => {
   if (header !== null) {
     // Nav toggle on mobile
     const menuToggle = document.querySelector(".header__menu-toggle");
-    const menuLinks = document.querySelectorAll(".header__nav a");
+    const menuLinks = document.querySelectorAll(".header__nav__anchor");
 
     const toggleHeaderNav = (e) => {
       e.preventDefault();

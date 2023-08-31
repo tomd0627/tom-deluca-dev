@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3rem 0;
+
+  @include mq-up(medium) {
+    margin: 0 auto;
+    width: 75%;
+  }
+
+  &-field {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+  }
+
+  &-input {
+    &--text,
+    &--textarea {
+      background: none;
+      border: none;
+      border-bottom: 2px solid $c-black;
+      color: $c-black;
+      font-size: 1.5rem;
+      outline: none;
+      padding: 1rem 0;
+      transition: all 0.3s;
+      width: 100%;
+
+      &:focus,
+      &:not(:placeholder-shown) {
+        border-width: 4px;
+
+        & + .form-label {
+          font-size: 1.2rem;
+          top: -1rem;
+        }
+      }
+    }
+
+    &--textarea {
+      height: auto;
+      min-height: 10rem;
+      resize: none;
+    }
+
+    &--button {
+      align-self: flex-start;
+      cursor: pointer;
+      min-width: 10rem;
+
+      @include button($bg: $c-white, $fg: $c-blue);
+    }
+  }
+
+  &-label {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    transition: all 0.3s;
+  }
+}
