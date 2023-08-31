@@ -39,6 +39,7 @@
     }
 
     &--textarea {
+      font-family: $ff-body;
       height: auto;
       min-height: 10rem;
       resize: none;
