@@ -59,18 +59,22 @@
 
 // Button
 @mixin button($bg: $c-white, $fg: $c-black) {
+  border: 2px solid $fg;
   border-radius: 25px;
   background: $bg;
   color: $fg;
+  cursor: pointer;
   display: inline-block;
   font-size: 1.2rem;
   font-weight: $fw-bold;
+  min-width: 12rem;
   padding: 0.8rem;
   transition: all 0.3s;
 
   &:focus,
   &:hover {
     background: $fg;
+    border-color: $bg;
     color: $bg;
   }
 }

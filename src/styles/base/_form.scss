@@ -27,6 +27,10 @@
       transition: all 0.3s;
       width: 100%;
 
+      &::placeholder {
+        color: transparent;
+      }
+
       &:focus,
       &:not(:placeholder-shown) {
         border-width: 4px;
@@ -47,8 +51,6 @@
 
     &--button {
       align-self: flex-start;
-      cursor: pointer;
-      min-width: 10rem;
 
       @include button($bg: $c-white, $fg: $c-blue);
     }

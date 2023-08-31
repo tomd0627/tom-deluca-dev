@@ -1,0 +1,48 @@
+---
+import SkillCard from "../elements/SkillCard.astro";
+import Section from "../elements/Section.astro";
+import SectionIntro from "../elements/SectionIntro.astro";
+import SectionTitle from "../elements/SectionTitle.astro";
+---
+
+<Section cssClass="section--skills" title="skills">
+  <SectionIntro>
+    <SectionTitle title="My skills" />
+    <p class="animate-fade">Here's what I do to help make the web look nice.</p>
+  </SectionIntro>
+  <div class="skill-card-list">
+    <SkillCard name="Expert" cssClass="expert" icon="face-smile">
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>Design Translation</li>
+        <li>Content Entry</li>
+        <li>MJML</li>
+        <li>Bootstrap</li>
+        <li>Sitecore (SXA, Content Editor)</li>
+        <li>Storybook</li>
+        <li>Tailwind CSS</li>
+      </ul>
+    </SkillCard>
+    <SkillCard name="Intermediate" cssClass="intermediate" icon="face-meh">
+      <ul>
+        <li>GSAP</li>
+        <li>React</li>
+        <li>TypeScript</li>
+        <li>Angular</li>
+        <li>Handlebars.js</li>
+        <li>Mustache.js</li>
+        <li>Nunjucks</li>
+        <li>.NET</li>
+      </ul>
+    </SkillCard>
+    <SkillCard name="Learning" cssClass="learning" icon="face-frown">
+      <ul>
+        <li>Vue.js</li>
+        <li>Svelte</li>
+      </ul>
+    </SkillCard>
+  </div>
+</Section>

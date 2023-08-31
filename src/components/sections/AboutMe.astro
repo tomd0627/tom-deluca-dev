@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import imgHeadshot from "../../assets/images/headshot.png";
+import Section from "../elements/Section.astro";
+import SectionIntro from "../elements/SectionIntro.astro";
+import SectionTitle from "../elements/SectionTitle.astro";
+---
+
+<Section cssClass="section--about" title="about">
+  <SectionIntro>
+    <SectionTitle title="About me" />
+    <p class="animate-fade">
+      Hello. My name is <span class="section__highlight">Tom DeLuca</span>.
+    </p>
+    <p class="animate-fade">
+      I'm a front-end developer living in New York. I love doing design
+      translation and working with others to make beautiful websites. I'm an
+      expert when it comes to efficiently and accurately delivering HTML, CSS
+      and JavaScript for implementation.
+    </p>
+    <p class="animate-fade">
+      When I'm not doing web stuff, I can usually be found watching anime or
+      playing video games, hanging out with my family or friends, or at one of
+      the local bars having a beer or two on a Friday night.
+    </p>
+  </SectionIntro>
+  <Image
+    class="section__image animate-fade"
+    src={imgHeadshot}
+    alt="Tom DeLuca headshot"
+    loading="eager"
+  />
+</Section>

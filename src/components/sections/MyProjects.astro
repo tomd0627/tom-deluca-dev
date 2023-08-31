@@ -1,0 +1,112 @@
+---
+import ProjectCard from "../elements/ProjectCard.astro";
+import Section from "../elements/Section.astro";
+import SectionIntro from "../elements/SectionIntro.astro";
+import SectionTitle from "../elements/SectionTitle.astro";
+import { Image } from "astro:assets";
+import imgProjectCiga from "../../assets/images/projects/ciga.png";
+import imgProjectCencora from "../../assets/images/projects/cencora.png";
+import imgProjectCorbion from "../../assets/images/projects/corbion.png";
+import imgProjectRra from "../../assets/images/projects/rra.png";
+import imgProjectAruba from "../../assets/images/projects/ob.png";
+import imgProjectAb from "../../assets/images/projects/ab.png";
+import imgProjectAsh from "../../assets/images/projects/ash.png";
+---
+
+<Section cssClass="section--projects" title="projects">
+  <SectionIntro>
+    <SectionTitle title="My projects" />
+    <p class="animate-fade">
+      Here are some of the recent projects I've worked on that I am proud of.
+    </p>
+    <p class="animate-fade">
+      <span class="hide-desktop">Click</span>
+      <span class="hide-mobile">Hover over</span> a card to see more details.
+    </p>
+  </SectionIntro>
+  <div class="project-card-list">
+    <ProjectCard name="CIGA">
+      <Image
+        slot="project-card-image"
+        src={imgProjectCiga}
+        alt="California Insurance Guarantee Association website screenshot"
+      />
+      <h4>California Insurance Guarantee Association</h4>
+      <p>
+        Utilized Tailwind CSS to build components for a React/Next.js
+        implementation.
+      </p>
+    </ProjectCard>
+    <ProjectCard name="Cencora">
+      <Image
+        slot="project-card-image"
+        src={imgProjectCencora}
+        alt="Cencora website screenshot"
+      />
+      <h4>Cencora</h4>
+      <p>
+        Splash page implementation for a new brand announcement, which utilized
+        Storybook and GSAP animations.
+      </p>
+    </ProjectCard>
+    <ProjectCard name="Corbion">
+      <Image
+        slot="project-card-image"
+        src={imgProjectCorbion}
+        alt="Corbion website screenshot"
+      />
+      <h4>Corbion</h4>
+      <p>
+        Style updates and bug fixing for various components of the already built
+        Sitecore site before initial launch.
+      </p>
+    </ProjectCard>
+    <ProjectCard name="RRA">
+      <Image
+        slot="project-card-image"
+        src={imgProjectRra}
+        alt="Russel Reynolds Associates website screenshot"
+      />
+      <h4>Russel Reynolds Associates</h4>
+      <p>
+        Design translation of components using Storybook for use in a new
+        Sitecore instance.
+      </p>
+    </ProjectCard>
+    <ProjectCard name="AB/OB">
+      <Image
+        slot="project-card-image"
+        src={imgProjectAruba}
+        alt="Orco Bank website screenshot"
+      />
+      <h4>Aruba Bank/Orco Bank</h4>
+      <p>
+        Design translation of Sitecore SXA components for a replatform effort.
+      </p>
+    </ProjectCard>
+    <ProjectCard name="AB">
+      <Image
+        slot="project-card-image"
+        src={imgProjectAb}
+        alt="AmerisourceBergen website screenshot"
+      />
+      <h4>AmerisourceBergen</h4>
+      <p>
+        Style updates to existing components and design translation of new
+        components to align with a rebrand effort for existing business units.
+      </p>
+    </ProjectCard>
+    <ProjectCard name="ASH">
+      <Image
+        slot="project-card-image"
+        src={imgProjectAsh}
+        alt="American Society of Hematology website screenshot"
+      />
+      <h4>American Society of Hematology</h4>
+      <p>
+        Initial design translation of components. Extensive content entry and
+        bug fixing to meet a site launch deadline.
+      </p>
+    </ProjectCard>
+  </div>
+</Section>
