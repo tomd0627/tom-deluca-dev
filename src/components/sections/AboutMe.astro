@@ -24,10 +24,7 @@ import SectionTitle from "../elements/SectionTitle.astro";
       the local bars having a beer or two on a Friday night.
     </p>
   </SectionIntro>
-  <Image
-    class="section__image animate-fade"
-    src={imgHeadshot}
-    alt="Tom DeLuca headshot"
-    loading="eager"
-  />
+  <div class="section__image animate-fade">
+    <Image src={imgHeadshot} alt="Tom DeLuca headshot" loading="eager" />
+  </div>
 </Section>

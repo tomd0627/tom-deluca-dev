@@ -32,12 +32,10 @@
   }
 
   &__image {
-    animation: morph infinite 15s 1s;
-    border-radius: 50%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-    @include mq-up(medium) {
-      width: 40vw;
+    img {
+      animation: morph infinite 15s 1s;
+      border-radius: 50%;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     @keyframes morph {
@@ -58,6 +56,12 @@
     background: $c-dark-blue;
     color: $c-white;
 
+    .section__image {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+    }
+
     @include mq-up(medium) {
       .container {
         align-items: center;
@@ -65,6 +69,11 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         gap: 3rem;
+      }
+
+      .section__image {
+        flex: 0 0 45%;
+        justify-content: flex-end;
       }
     }
   }
