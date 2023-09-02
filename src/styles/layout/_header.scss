@@ -22,7 +22,12 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    min-height: 1.875rem;
     position: relative;
+
+    @include mq-up(large) {
+      min-height: 2.25rem;
+    }
   }
 
   &__logo {
@@ -30,7 +35,7 @@
     font-size: 1.5rem;
     font-weight: $fw-bold;
 
-    @include mq-up(medium) {
+    @include mq-up(large) {
       font-size: 2rem;
     }
   }
@@ -72,7 +77,7 @@
       }
     }
 
-    @include mq-up(medium) {
+    @include mq-up(large) {
       display: none;
     }
   }
@@ -97,7 +102,7 @@
       transform: translateY(-100%);
     }
 
-    @include mq-up(medium) {
+    @include mq-up(large) {
       background: none;
       margin: 0;
       max-height: none;
@@ -107,19 +112,22 @@
     }
 
     ul {
-      li {
-        @include mq-up(medium) {
-          display: inline-block;
-        }
+      display: flex;
+      flex-flow: column nowrap;
 
+      @include mq-up(large) {
+        flex-flow: row wrap;
+        gap: 0 2.5rem;
+      }
+
+      li {
         a {
           display: block;
           font-size: 1.2rem;
           padding: 1rem 0;
 
-          @include mq-up(medium) {
+          @include mq-up(large) {
             border-bottom: 2px solid transparent;
-            margin: 0 0 0 2.5rem;
             padding: 0.5rem 0;
             transition: all 0.3s;
 

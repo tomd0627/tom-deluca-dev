@@ -40,25 +40,29 @@ export const initializeUtills = () => {
       body.classList.remove("show-nav");
     };
 
-    menuToggle.addEventListener("click", toggleHeaderNav);
-    menuToggle.addEventListener("keyup", (e) => {
-      if (e.key === "Enter" || e.keyCode === 13) {
-        toggleHeaderNav;
-      }
-    });
-
-    menuLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        closeHeaderNav();
-
-        // Smooth scroll anchor links
-        e.preventDefault();
-        const linkHref = link.getAttribute("href");
-        const section = document.querySelector(linkHref);
-
-        section.scrollIntoView({ behavior: "smooth" });
+    if (menuToggle !== null) {
+      menuToggle.addEventListener("click", toggleHeaderNav);
+      menuToggle.addEventListener("keyup", (e) => {
+        if (e.key === "Enter" || e.keyCode === 13) {
+          toggleHeaderNav;
+        }
       });
-    });
+    }
+
+    if (menuLinks !== null) {
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          closeHeaderNav();
+
+          // Smooth scroll anchor links
+          e.preventDefault();
+          const linkHref = link.getAttribute("href");
+          const section = document.querySelector(linkHref);
+
+          section.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    }
 
     body.addEventListener("click", () => {
       closeHeaderNav();

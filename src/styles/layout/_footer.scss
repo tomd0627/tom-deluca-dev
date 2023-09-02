@@ -7,7 +7,7 @@
     flex-flow: column nowrap;
     text-align: center;
 
-    @include mq-up(medium) {
+    @include mq-up(large) {
       align-items: center;
       flex-flow: row nowrap;
       gap: 0;
@@ -23,7 +23,7 @@
       text-decoration: underline;
     }
 
-    @include mq-up(medium) {
+    @include mq-up(large) {
       display: inline;
 
       .footer__copyright & {
@@ -39,7 +39,7 @@
   &__copyright,
   &__links,
   &__tagline {
-    @include mq-up(medium) {
+    @include mq-up(large) {
       flex: 1 0 33.33%;
     }
   }
@@ -48,7 +48,7 @@
     margin: 0 0 1rem 0;
     order: -1;
 
-    @include mq-up(medium) {
+    @include mq-up(large) {
       margin: 0;
       order: 0;
       text-align: center;
@@ -72,7 +72,7 @@
   }
 
   &__tagline {
-    @include mq-up(medium) {
+    @include mq-up(large) {
       text-align: right;
     }
 

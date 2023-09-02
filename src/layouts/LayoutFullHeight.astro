@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/layout/Footer.astro";
+import HeaderAlt from "../components/layout/HeaderAlt.astro";
 
 export interface Props {
   title: string;
@@ -22,6 +23,7 @@ import "../styles/styles.scss";
     <title>{title}</title>
   </head>
   <body>
+    <HeaderAlt />
     <main>
       <slot />
     </main>
