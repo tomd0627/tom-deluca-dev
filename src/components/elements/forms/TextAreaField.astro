@@ -1,0 +1,36 @@
+---
+export interface Props {
+  id: string;
+  name: string;
+  label: string;
+  isRequired?: boolean;
+}
+
+const { id, name, label, isRequired } = Astro.props;
+
+let required = false;
+
+if (isRequired === true) {
+  required = true;
+}
+---
+
+<label class="form-field animate-fade">
+  <textarea
+    id={id}
+    name={name}
+    placeholder=`${label}`
+    class="form-input form-input--textarea"
+    required={required}></textarea>
+  <span class="form-label">
+    {label}
+    {
+      isRequired && (
+        <>
+          {" "}
+          <span class="form-required">*</span>
+        </>
+      )
+    }
+  </span>
+</label>

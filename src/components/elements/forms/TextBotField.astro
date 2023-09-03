@@ -1,0 +1,20 @@
+---
+export interface Props {
+  name: string;
+  label: string;
+}
+
+const { name, label } = Astro.props;
+---
+
+<label class="form-field form-field-hidden">
+  <input
+    name={name}
+    placeholder={label}
+    class="form-input form-input--text"
+    type="text"
+    tabindex="-1"
+    autocomplete="off"
+  />
+  <span class="form-label">{label}</span>
+</label>

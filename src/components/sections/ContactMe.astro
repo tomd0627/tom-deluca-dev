@@ -2,6 +2,10 @@
 import Section from "../elements/Section.astro";
 import SectionIntro from "../elements/SectionIntro.astro";
 import SectionTitle from "../elements/SectionTitle.astro";
+import ButtonField from "../elements/forms/ButtonField.astro";
+import TextAreaField from "../elements/forms/TextAreaField.astro";
+import TextBotField from "../elements/forms/TextBotField.astro";
+import TextField from "../elements/forms/TextField.astro";
 ---
 
 <Section cssClass="section--contact" title="contact">
@@ -20,61 +24,27 @@ import SectionTitle from "../elements/SectionTitle.astro";
     data-netlify="true"
     action="/contact-form-success"
   >
-    <label class="form-field form-field-hidden">
-      <input
-        name="name-bot"
-        placeholder="Don't fill this out if you're human"
-        class="form-input form-input--text"
-        type="text"
-        tabindex="-1"
-        autocomplete="off"
-      />
-      <span class="form-label">Don't fill this out if you're human</span>
-    </label>
-    <label class="form-field animate-fade">
-      <input
-        id="txtName"
-        name="name"
-        placeholder="Your name"
-        class="form-input form-input--text"
-        type="text"
-        required
-      />
-      <span class="form-label">
-        Your name
-        <span class="form-required">*</span>
-      </span>
-    </label>
-    <label class="form-field animate-fade">
-      <input
-        id="txtEmail"
-        name="email"
-        placeholder="Your email"
-        class="form-input form-input--text"
-        type="email"
-        required
-      />
-      <span class="form-label">
-        Your email
-        <span class="form-required">*</span>
-      </span>
-    </label>
-    <label class="form-field animate-fade">
-      <textarea
-        id="txtMessage"
-        name="message"
-        placeholder="Your message"
-        class="form-input form-input--textarea"
-        required></textarea>
-      <span class="form-label">
-        Your message
-        <span class="form-required">*</span>
-      </span>
-    </label>
-    <div class="form-field animate-fade">
-      <button class="button form-input form-input--button" type="submit"
-        >Let's chat</button
-      >
-    </div>
+    <TextBotField name="name-bot" label="Don't fill this out if you're human" />
+    <TextField
+      id="txtName"
+      name="name"
+      label="Your name"
+      type="text"
+      isRequired
+    />
+    <TextField
+      id="txtEmail"
+      name="email"
+      label="Your email"
+      type="email"
+      isRequired
+    />
+    <TextAreaField
+      id="txtMessage"
+      name="message"
+      label="Your message"
+      isRequired
+    />
+    <ButtonField label="Let's chat" type="submit" />
   </form>
 </Section>
