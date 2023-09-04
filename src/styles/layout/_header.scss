@@ -6,8 +6,8 @@
   position: fixed;
   right: 0;
   top: 0;
-  transition: all 0.3s;
-  z-index: 10;
+  transition: all $s-30;
+  z-index: $z-10;
 
   .body-scroll-down & {
     transform: translateY(-100%);
@@ -59,7 +59,7 @@
       height: 3px;
       opacity: 1;
       transform: translate(0) rotate(0);
-      transition: all 0.3s;
+      transition: all $s-30;
       width: 100%;
 
       .show-nav & {
@@ -92,7 +92,7 @@
     position: absolute;
     right: 0;
     top: calc(100% + 1.5rem);
-    transition: all 0.3s;
+    transition: all $s-30;
 
     .show-nav & {
       max-height: 15rem;
@@ -129,7 +129,7 @@
           @include mq-up(large) {
             border-bottom: 2px solid transparent;
             padding: 0.5rem 0;
-            transition: all 0.3s;
+            transition: all $s-30;
 
             &:focus,
             &:hover {

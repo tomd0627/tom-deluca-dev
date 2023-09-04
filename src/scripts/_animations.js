@@ -7,13 +7,17 @@ export const initializeAnimations = () => {
   // Slide animation
   const slideAnimation = (
     slideElements = gsap.utils.toArray(".animate-slide"),
-    slideYVal = 50,
+    slideOpacityStartVal = 0,
+    slideOpacityEndVal = 1,
+    slideYPosStartVal = 50,
+    slideYPosEndVal = 0,
     slideStartVal = "top 85%",
-    slideEndVal = "bottom 15%"
+    slideEndVal = "bottom 15%",
+    slideStaggerVal = 0.3
   ) => {
     gsap.set(slideElements, {
-      opacity: 0,
-      y: slideYVal,
+      opacity: slideOpacityStartVal,
+      y: slideYPosStartVal,
     }),
       ScrollTrigger.batch(slideElements, {
         start: slideStartVal,
@@ -21,27 +25,27 @@ export const initializeAnimations = () => {
 
         onEnter: (e) =>
           gsap.to(e, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
+            opacity: slideOpacityEndVal,
+            y: slideYPosEndVal,
+            stagger: slideStaggerVal,
           }),
         onEnterBack: (e) =>
           gsap.to(e, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
+            opacity: slideOpacityEndVal,
+            y: slideYPosEndVal,
+            stagger: slideStaggerVal,
           }),
         onLeave: (e) =>
           gsap.to(e, {
-            opacity: 0,
-            y: -slideYVal,
-            stagger: 0.3,
+            opacity: slideOpacityStartVal,
+            y: -slideYPosStartVal,
+            stagger: slideStaggerVal,
           }),
         onLeaveBack: (e) =>
           gsap.to(e, {
-            opacity: 0,
-            y: slideYVal,
-            stagger: 0.3,
+            opacity: slideOpacityStartVal,
+            y: slideYPosStartVal,
+            stagger: slideStaggerVal,
           }),
       });
   };
