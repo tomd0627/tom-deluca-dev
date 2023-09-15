@@ -17,7 +17,7 @@ export const initializeAnimations = () => {
   ) => {
     gsap.set(slideElements, {
       opacity: slideOpacityStartVal,
-      y: slideYPosStartVal,
+      y: slideYPosEndVal,
     }),
       ScrollTrigger.batch(slideElements, {
         start: slideStartVal,
