@@ -125,15 +125,37 @@
           display: block;
           font-size: 1.2rem;
           padding: 1rem 0;
+          position: relative;
 
           @include mq-up(large) {
-            border-bottom: 2px solid transparent;
             padding: 0.5rem 0;
             transition: all $s-30;
 
+            &::after {
+              background: $c-white;
+              border-radius: 0.5rem;
+              bottom: 0;
+              content: "";
+              display: block;
+              height: 2px;
+              left: 50%;
+              position: absolute;
+              transition: height $s-30, width $s-30 $s-50;
+              transform: translateX(-50%);
+              width: 0;
+              z-index: $z-neg-1;
+            }
+
             &:focus,
             &:hover {
-              border-color: $c-white;
+              color: $c-blue;
+              transition: all $s-30 $s-50;
+
+              &::after {
+                height: 100%;
+                transition: height $s-30 $s-50, width $s-30;
+                width: 125%;
+              }
             }
           }
         }
