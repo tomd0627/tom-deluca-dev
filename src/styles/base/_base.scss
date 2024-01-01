@@ -98,3 +98,11 @@ img {
     display: none;
   }
 }
+
+.visually-hidden {
+  height: 0;
+  left: -9999rem;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+}

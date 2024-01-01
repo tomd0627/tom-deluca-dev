@@ -6,7 +6,7 @@ export interface Props {
 const { name } = Astro.props;
 ---
 
-<div class="project-card-list__item-container animate-slide" tabindex="0">
+<a href="/" class="project-card-list__item-container animate-slide">
   <div class="project-card-list__item">
     <div class="project-card-list__item__front">
       <slot name="project-card-image" />
@@ -16,4 +16,4 @@ const { name } = Astro.props;
       <slot />
     </div>
   </div>
-</div>
+</a>

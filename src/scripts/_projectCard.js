@@ -6,13 +6,9 @@ export const initializeProjectCard = () => {
     );
 
     projectCArds.forEach((card) => {
-      card.addEventListener("click", () => {
+      card.addEventListener("click", (e) => {
+        e.preventDefault();
         card.classList.toggle("active");
-      });
-      card.addEventListener("keyup", (e) => {
-        if (e.key === "Enter" || e.keyCode === 13) {
-          card.classList.toggle("active");
-        }
       });
     });
   };
