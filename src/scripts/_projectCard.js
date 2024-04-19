@@ -9,6 +9,4 @@ export const initializeProjectCard = () => {
       e.preventDefault();
     });
   });
-
-  projectCardClick();
 };
