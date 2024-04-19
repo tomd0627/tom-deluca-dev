@@ -15,15 +15,9 @@
     transition: all $s-50;
     width: 100%;
 
-    .project-card-list__item-container.active & {
+    .project-card-list__item-container:focus &,
+    .project-card-list__item-container:hover & {
       transform: rotateY(180deg);
-    }
-
-    @include mq-up(large) {
-      .project-card-list__item-container:focus &,
-      .project-card-list__item-container:hover & {
-        transform: rotateY(180deg);
-      }
     }
 
     &-container {
