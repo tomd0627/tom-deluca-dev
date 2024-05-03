@@ -69,8 +69,8 @@
 
   &-line {
     background: $c-black;
-    bottom: 2px;
-    height: 2px;
+    bottom: 0;
+    height: 4px;
     position: absolute;
     transition: all $s-30;
     width: 0;
