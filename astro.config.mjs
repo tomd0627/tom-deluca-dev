@@ -6,6 +6,6 @@ export default defineConfig({
   // ...
   output: "server",
   adapter: netlify({
-    imageCDN: false,
+    imageCDN: true,
   }),
 });
