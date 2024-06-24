@@ -4,6 +4,7 @@ import Section from "../elements/Section.astro";
 import SectionIntro from "../elements/SectionIntro.astro";
 import SectionTitle from "../elements/SectionTitle.astro";
 import { Image } from "astro:assets";
+import imgProjectRapid7 from "../../assets/images/projects/rapid7.png";
 import imgProjectCiga from "../../assets/images/projects/ciga.png";
 import imgProjectCencora from "../../assets/images/projects/cencora.png";
 import imgProjectCorbion from "../../assets/images/projects/corbion.png";
@@ -25,6 +26,18 @@ import imgProjectAsh from "../../assets/images/projects/ash.png";
     </p>
   </SectionIntro>
   <div class="project-card-list">
+    <ProjectCard name="Rapid7">
+      <Image
+        slot="project-card-image"
+        src={imgProjectRapid7}
+        alt="Rapid7 website screenshot"
+      />
+      <h4>Rapid7</h4>
+      <p>
+        Utilized the Optimizely platform to maintain a company website including
+        content entry, bug-fixing, and style updates for multiple components.
+      </p>
+    </ProjectCard>
     <ProjectCard name="CIGA">
       <Image
         slot="project-card-image"
