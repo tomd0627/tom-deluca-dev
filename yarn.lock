@@ -2342,7 +2342,7 @@ semver@^7.6.0, semver@^7.6.2:
   resolved "https://registry.npmjs.org/semver/-/semver-7.6.2.tgz"
   integrity sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==
 
-sharp@^0.33.3:
+sharp@^0.33.3, sharp@^0.33.4:
   version "0.33.4"
   resolved "https://registry.npmjs.org/sharp/-/sharp-0.33.4.tgz"
   integrity sha512-7i/dt5kGl7qR4gwPRD2biwD2/SvBn3O04J77XKFgL2OnZtQw+AG9wnuS/csmu80nPRHLYE9E41fyEiG8nhH6/Q==
