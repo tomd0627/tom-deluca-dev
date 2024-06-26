@@ -1,0 +1,38 @@
+---
+import ButtonField from "../form-fields/ButtonField.astro";
+import TextAreaField from "../form-fields/TextAreaField.astro";
+import TextBotField from "../form-fields/TextBotField.astro";
+import TextField from "../form-fields/TextField.astro";
+---
+
+<form
+  class="form"
+  name="contact-form"
+  method="POST"
+  netlify-honeypot="name-bot"
+  data-netlify="true"
+  action="/contact-form-success"
+>
+  <TextBotField name="name-bot" label="Don't fill this out if you're human" />
+  <TextField
+    id="txtName"
+    name="name"
+    label="Your name"
+    type="text"
+    isRequired
+  />
+  <TextField
+    id="txtEmail"
+    name="email"
+    label="Your email"
+    type="email"
+    isRequired
+  />
+  <TextAreaField
+    id="txtMessage"
+    name="message"
+    label="Your message"
+    isRequired
+  />
+  <ButtonField label="Let's chat" type="submit" />
+</form>
