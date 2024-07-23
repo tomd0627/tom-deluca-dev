@@ -1,0 +1,13 @@
+.button-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+
+  &--center {
+    justify-content: center;
+  }
+
+  .button {
+    @include button($bg: $c-white, $fg: $c-blue);
+  }
+}

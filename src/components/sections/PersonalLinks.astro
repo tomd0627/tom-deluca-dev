@@ -1,0 +1,33 @@
+---
+import Section from "../elements/Section.astro";
+import SectionIntro from "../elements/SectionIntro.astro";
+import SectionTitle from "../elements/SectionTitle.astro";
+---
+
+<Section cssClass="section--personal-links" title="personal-links">
+  <SectionIntro>
+    <SectionTitle title="My personal links" />
+    <p class="animate-fade">
+      Wanna get in touch with me directly or take a look at my resume? Here you
+      go.
+    </p>
+  </SectionIntro>
+  <div class="button-list button-list--center">
+    <a
+      href="mailto:tomd0627@optonline.net"
+      class="animate-fade button button--large button--icon-left"
+      ><i class="fas fa-envelope"></i> Email me</a
+    >
+    <a
+      href="tel:18459872998"
+      class="animate-fade button button--large button--icon-left"
+      ><i class="fas fa-phone"></i> Call me</a
+    >
+    <a
+      href="/src/assets/files/Resume_Front-End.pdf"
+      target="_blank"
+      class="animate-fade button button--large button--icon-left"
+      ><i class="fas fa-file-lines"></i> My resume</a
+    >
+  </div>
+</Section>

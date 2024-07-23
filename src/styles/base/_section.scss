@@ -23,6 +23,10 @@
     .section--contact & {
       @include text-color-split($color2: $c-yellow);
     }
+
+    .section--personal-links & {
+      @include text-color-split($color2: $c-green);
+    }
   }
 
   &__highlight {
@@ -88,6 +92,10 @@
 
   &--contact {
     background: $c-yellow;
+  }
+
+  &--personal-links {
+    background: $c-green;
   }
 
   &--full-height {
