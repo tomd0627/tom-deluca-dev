@@ -59,17 +59,19 @@
 
 // Button
 @mixin button($bg: $c-white, $fg: $c-black) {
+  align-items: center;
   border: 2px solid $fg;
   border-radius: 50vw;
   background: $bg;
   color: $fg;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   font-size: 1.2rem;
+  gap: 1rem;
+  justify-content: center;
   font-weight: $fw-bold;
   min-width: 12rem;
   padding: 0.8rem;
-  text-align: center;
   transition: all $s-30;
 
   &:focus,
@@ -83,17 +85,5 @@
     font-size: 1.8rem;
     min-width: 18rem;
     padding: 1rem;
-  }
-
-  &--icon-left {
-    i {
-      margin: 0 0.5rem 0 0;
-    }
-  }
-
-  &--icon-right {
-    i {
-      margin: 0 0 0 0.5rem;
-    }
   }
 }
