@@ -40,7 +40,7 @@
         color: transparent;
       }
 
-      &:focus,
+      &:focus-visible,
       &:not(:placeholder-shown) {
         & ~ .form-line {
           width: 100%;

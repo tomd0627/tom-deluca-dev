@@ -62,7 +62,7 @@
         transition: all $s-30;
       }
 
-      &:focus,
+      &:focus-visible,
       &:hover {
         .fa-brands {
           transform: scale(1.2);

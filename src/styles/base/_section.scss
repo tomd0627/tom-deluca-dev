@@ -24,7 +24,7 @@
       @include text-color-split($color2: $c-yellow);
     }
 
-    .section--personal-links & {
+    .section--links & {
       @include text-color-split($color2: $c-green);
     }
   }
@@ -94,7 +94,7 @@
     background: $c-yellow;
   }
 
-  &--personal-links {
+  &--links {
     background: $c-green;
   }
 

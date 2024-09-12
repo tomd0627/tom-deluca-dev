@@ -74,7 +74,7 @@
   padding: 0.8rem;
   transition: all $s-30;
 
-  &:focus,
+  &:focus-visible,
   &:hover {
     background: $fg;
     border-color: $bg;

@@ -8,6 +8,7 @@ export const initializeHeader = () => {
     // Nav toggle on mobile
     const menuToggle = document.querySelector(".header__menu-toggle");
     const menuLinks = document.querySelectorAll(".header__nav__anchor");
+    const sections = document.querySelectorAll("section");
 
     const toggleHeaderNav = (e) => {
       e.preventDefault();
@@ -26,25 +27,56 @@ export const initializeHeader = () => {
           toggleHeaderNav;
         }
       });
+    } else {
+      return;
     }
 
     if (menuLinks !== null) {
+      // Smooth scroll anchor links
       menuLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
           closeHeaderNav();
 
-          // Smooth scroll anchor links
           e.preventDefault();
           const linkHref = link.getAttribute("href");
-          const section = document.querySelector(linkHref);
+          const scrolledSection = document.querySelector(linkHref);
 
-          section.scrollIntoView({ behavior: "smooth" });
+          scrolledSection.scrollIntoView({ behavior: "smooth" });
         });
       });
+
+      // On desktop, highlight 'active' section on scroll
+      const mqDesktop = window.matchMedia("(min-width: 1024px)");
+
+      if (mqDesktop.matches) {
+        const options = {
+          threshold: 0.4,
+        };
+
+        const observer = new IntersectionObserver((sections) => {
+          sections.forEach((section) => {
+            if (section.isIntersecting) {
+              menuLinks.forEach((link) => link.classList.remove("active"));
+              const activeLink = document.querySelector(
+                `.header__nav__anchor[href="#${section.target.id}"]`
+              );
+              activeLink.classList.add("active");
+            }
+          });
+        }, options);
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    } else {
+      return;
     }
 
     body.addEventListener("click", () => {
       closeHeaderNav();
     });
+  } else {
+    return;
   }
 };

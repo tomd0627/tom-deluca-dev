@@ -30,6 +30,18 @@
     }
   }
 
+  &__skip-to-content {
+    @include button($bg: $c-blue, $fg: $c-white);
+
+    position: absolute;
+    transform: translateY(-150%);
+    transition: all $s-30;
+
+    &:focus-visible {
+      transform: translateY(0);
+    }
+  }
+
   &__logo {
     font-family: $ff-heading;
     font-size: 1.5rem;
@@ -126,8 +138,9 @@
           position: relative;
           transition: all $s-30;
 
-          &:focus,
-          &:hover {
+          &:focus-visible,
+          &:hover,
+          &.active {
             background: $c-white;
             color: $c-blue;
           }
@@ -151,8 +164,9 @@
               z-index: $z-neg-1;
             }
 
-            &:focus,
-            &:hover {
+            &:focus-visible,
+            &:hover,
+            &.active {
               background: none;
               color: $c-blue;
               transition: all $s-30 $s-50;

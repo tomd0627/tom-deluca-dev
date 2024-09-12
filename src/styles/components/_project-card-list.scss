@@ -15,7 +15,7 @@
     transition: all $s-50;
     width: 100%;
 
-    .project-card-list__item-container:focus &,
+    .project-card-list__item-container:focus-visible &,
     .project-card-list__item-container:hover & {
       transform: rotateY(180deg);
     }
