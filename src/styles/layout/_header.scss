@@ -33,9 +33,11 @@
   &__skip-to-content {
     @include button($bg: $c-blue, $fg: $c-white);
 
-    position: absolute;
-    transform: translateY(-150%);
-    transition: all $s-30;
+    & {
+      position: absolute;
+      transform: translateY(-150%);
+      transition: all $s-30;
+    }
 
     &:focus-visible {
       transform: translateY(0);
