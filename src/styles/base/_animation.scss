@@ -1,6 +1,8 @@
+@use "../settings/variables";
+
 .animate-fade {
   opacity: 0;
-  transition: all $s-30;
+  transition: all variables.$s-30;
 
   &.active {
     opacity: 1;

@@ -1,9 +1,12 @@
+@use "../settings/variables";
+@use "mixins";
+
 .form {
   display: flex;
   flex-flow: column nowrap;
   gap: 3rem 0;
 
-  @include mq-up(medium) {
+  @include mixins.mq-up(medium) {
     margin: 0 auto;
     width: 75%;
   }
@@ -19,7 +22,7 @@
       opacity: 0;
       position: absolute;
       width: 0;
-      z-index: $z-neg-1;
+      z-index: variables.$z-neg-1;
     }
   }
 
@@ -28,9 +31,9 @@
     &--textarea {
       background: none;
       border: none;
-      border-bottom: 2px solid $c-black;
+      border-bottom: 2px solid variables.$c-black;
       border-radius: 0;
-      color: $c-black;
+      color: variables.$c-black;
       font-size: 1.5rem;
       outline: none;
       padding: 1rem 0;
@@ -54,7 +57,7 @@
     }
 
     &--textarea {
-      font-family: $ff-body;
+      font-family: variables.$ff-body;
       height: auto;
       min-height: 10rem;
       resize: none;
@@ -63,16 +66,16 @@
     &--button {
       align-self: flex-start;
 
-      @include button($bg: $c-white, $fg: $c-blue);
+      @include mixins.button($bg: variables.$c-white, $fg: variables.$c-blue);
     }
   }
 
   &-line {
-    background: $c-black;
+    background: variables.$c-black;
     bottom: 0;
     height: 4px;
     position: absolute;
-    transition: all $s-30;
+    transition: all variables.$s-30;
     width: 0;
   }
 
@@ -80,10 +83,10 @@
     font-size: 1.5rem;
     position: absolute;
     top: 1rem;
-    transition: all $s-30;
+    transition: all variables.$s-30;
   }
 
   &-required {
-    color: $c-red;
+    color: variables.$c-red;
   }
 }

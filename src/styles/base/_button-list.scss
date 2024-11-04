@@ -1,3 +1,6 @@
+@use "../settings/variables";
+@use "mixins";
+
 .button-list {
   display: flex;
   flex-flow: row wrap;
@@ -8,6 +11,6 @@
   }
 
   .button {
-    @include button($bg: $c-white, $fg: $c-blue);
+    @include mixins.button($bg: variables.$c-white, $fg: variables.$c-blue);
   }
 }

@@ -1,5 +1,8 @@
+@use "../base/mixins";
+@use "../settings/variables";
+
 .skill-card-list {
-  @include mq-up(medium) {
+  @include mixins.mq-up(medium) {
     display: flex;
     flex-flow: row wrap;
     gap: 2rem;
@@ -7,7 +10,7 @@
   }
 
   &__item {
-    background: $c-white;
+    background: variables.$c-white;
     border-radius: 0.5rem;
     margin: 0 0 2rem;
     padding: 2rem;
@@ -17,11 +20,11 @@
       margin: 0;
     }
 
-    @include mq-up(medium) {
+    @include mixins.mq-up(medium) {
       flex: 0 calc(50% - 1rem);
     }
 
-    @include mq-up(large) {
+    @include mixins.mq-up(large) {
       margin: 0;
       flex: 1;
     }
@@ -32,26 +35,26 @@
       right: 1rem;
       top: -1rem;
 
-      @include mq-up(medium) {
+      @include mixins.mq-up(medium) {
         font-size: 6rem;
         top: -2rem;
       }
 
-      @include mq-up(x-large) {
+      @include mixins.mq-up(x-large) {
         font-size: 8rem;
         right: 2rem;
       }
 
       .skill-card-list__item--expert & {
-        color: $c-green;
+        color: variables.$c-green;
       }
 
       .skill-card-list__item--intermediate & {
-        color: $c-yellow;
+        color: variables.$c-yellow;
       }
 
       .skill-card-list__item--learning & {
-        color: $c-red;
+        color: variables.$c-red;
       }
     }
 

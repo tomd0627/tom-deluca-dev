@@ -1,21 +1,23 @@
+@use "../settings/variables";
+
 // Media queries
 // reference: https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704
 
 @mixin mq-up($breakpoint) {
   @if ($breakpoint == small) {
-    @media (min-width: $bp-small) {
+    @media (min-width: variables.$bp-small) {
       @content;
     }
   } @else if ($breakpoint == medium) {
-    @media (min-width: $bp-medium) {
+    @media (min-width: variables.$bp-medium) {
       @content;
     }
   } @else if ($breakpoint == large) {
-    @media (min-width: $bp-large) {
+    @media (min-width: variables.$bp-large) {
       @content;
     }
   } @else if ($breakpoint == x-large) {
-    @media (min-width: $bp-extra-large) {
+    @media (min-width: variables.$bp-extra-large) {
       @content;
     }
   } @else {
@@ -26,8 +28,8 @@
 // Text color split
 @mixin text-color-split(
   $width: 125px,
-  $color1: $c-black,
-  $color2: $c-white,
+  $color1: variables.$c-black,
+  $color2: variables.$c-white,
   $dir: 125deg
 ) {
   background: linear-gradient($dir, $color1 $width, $color2 $width);
@@ -42,7 +44,7 @@
     position: absolute;
     left: -100vw;
     right: 100%;
-    z-index: $z-0;
+    z-index: variables.$z-0;
   }
 
   > * {
@@ -53,12 +55,12 @@
     padding: 1rem 1rem 1rem 0;
     position: relative;
     -webkit-text-fill-color: transparent;
-    z-index: $z-1;
+    z-index: variables.$z-1;
   }
 }
 
 // Button
-@mixin button($bg: $c-white, $fg: $c-black) {
+@mixin button($bg: variables.$c-white, $fg: variables.$c-black) {
   align-items: center;
   border: 2px solid $fg;
   border-radius: 50vw;
@@ -69,10 +71,10 @@
   font-size: 1.2rem;
   gap: 1rem;
   justify-content: center;
-  font-weight: $fw-bold;
+  font-weight: variables.$fw-bold;
   min-width: 12rem;
   padding: 0.8rem;
-  transition: all $s-30;
+  transition: all variables.$s-30;
 
   &:focus-visible,
   &:hover {

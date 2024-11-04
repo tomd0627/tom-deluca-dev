@@ -1,3 +1,6 @@
+@use "../settings/variables";
+@use "mixins";
+
 .section {
   padding: 8rem 0;
 
@@ -9,29 +12,32 @@
 
   &__title-wrapper {
     .section--about & {
-      @include text-color-split($color1: $c-white, $color2: $c-dark-blue);
+      @include mixins.text-color-split(
+        $color1: variables.$c-white,
+        $color2: variables.$c-dark-blue
+      );
     }
 
     .section--skills & {
-      @include text-color-split($color2: $c-orange);
+      @include mixins.text-color-split($color2: variables.$c-orange);
     }
 
     .section--projects & {
-      @include text-color-split($color2: $c-light-blue);
+      @include mixins.text-color-split($color2: variables.$c-light-blue);
     }
 
     .section--contact & {
-      @include text-color-split($color2: $c-yellow);
+      @include mixins.text-color-split($color2: variables.$c-yellow);
     }
 
     .section--links & {
-      @include text-color-split($color2: $c-green);
+      @include mixins.text-color-split($color2: variables.$c-green);
     }
   }
 
   &__highlight {
-    background: $c-orange;
-    color: $c-black;
+    background: variables.$c-orange;
+    color: variables.$c-black;
     padding: 0 0.3rem;
   }
 
@@ -57,8 +63,8 @@
   }
 
   &--about {
-    background: $c-dark-blue;
-    color: $c-white;
+    background: variables.$c-dark-blue;
+    color: variables.$c-white;
 
     .section__image {
       display: flex;
@@ -66,7 +72,7 @@
       justify-content: center;
     }
 
-    @include mq-up(medium) {
+    @include mixins.mq-up(medium) {
       .container {
         align-items: center;
         display: flex;
@@ -83,27 +89,27 @@
   }
 
   &--skills {
-    background: $c-orange;
+    background: variables.$c-orange;
   }
 
   &--projects {
-    background: $c-light-blue;
+    background: variables.$c-light-blue;
   }
 
   &--contact {
-    background: $c-yellow;
+    background: variables.$c-yellow;
   }
 
   &--links {
-    background: $c-green;
+    background: variables.$c-green;
   }
 
   &--full-height {
-    background: $c-dark-blue;
-    color: $c-white;
+    background: variables.$c-dark-blue;
+    color: variables.$c-white;
 
     .button {
-      @include button($bg: $c-white, $fg: $c-blue);
+      @include mixins.button($bg: variables.$c-white, $fg: variables.$c-blue);
     }
   }
 

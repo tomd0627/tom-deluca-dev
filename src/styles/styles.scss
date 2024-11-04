@@ -1,5 +1,5 @@
-@import "settings/index";
-@import "vendor/index";
-@import "base/index";
-@import "layout/index";
-@import "components/index";
+@use "settings/index";
+@use "vendor/index" as index2;
+@use "base/index" as index3;
+@use "layout/index" as index4;
+@use "components/index" as index5;

@@ -1,20 +1,23 @@
+@use "../base/mixins";
+@use "../settings/variables";
+
 .header {
-  background: $c-blue-75;
-  color: $c-white;
+  background: variables.$c-blue-75;
+  color: variables.$c-white;
   left: 0;
   padding: 1.5em 0;
   position: fixed;
   right: 0;
   top: 0;
-  transition: all $s-30;
-  z-index: $z-10;
+  transition: all variables.$s-30;
+  z-index: variables.$z-10;
 
   .body-scroll-down & {
     transform: translateY(-100%);
   }
 
   a {
-    color: $c-white;
+    color: variables.$c-white;
   }
 
   &__inner {
@@ -25,18 +28,18 @@
     min-height: 1.875rem;
     position: relative;
 
-    @include mq-up(large) {
+    @include mixins.mq-up(large) {
       min-height: 2.25rem;
     }
   }
 
   &__skip-to-content {
-    @include button($bg: $c-blue, $fg: $c-white);
+    @include mixins.button($bg: variables.$c-blue, $fg: variables.$c-white);
 
     & {
       position: absolute;
       transform: translateY(-150%);
-      transition: all $s-30;
+      transition: all variables.$s-30;
     }
 
     &:focus-visible {
@@ -45,11 +48,11 @@
   }
 
   &__logo {
-    font-family: $ff-heading;
+    font-family: variables.$ff-heading;
     font-size: 1.5rem;
-    font-weight: $fw-bold;
+    font-weight: variables.$fw-bold;
 
-    @include mq-up(large) {
+    @include mixins.mq-up(large) {
       font-size: 2rem;
     }
   }
@@ -68,12 +71,12 @@
     width: 40px;
 
     .bar {
-      background: $c-white;
+      background: variables.$c-white;
       display: block;
       height: 3px;
       opacity: 1;
       transform: translate(0) rotate(0);
-      transition: all $s-30;
+      transition: all variables.$s-30;
       width: 100%;
 
       .show-nav & {
@@ -91,13 +94,13 @@
       }
     }
 
-    @include mq-up(large) {
+    @include mixins.mq-up(large) {
       display: none;
     }
   }
 
   &__nav {
-    background: $c-blue-75;
+    background: variables.$c-blue-75;
     left: 0;
     margin: 0 -1.5rem;
     max-height: 0;
@@ -105,7 +108,7 @@
     position: absolute;
     right: 0;
     top: calc(100% + 1.5rem);
-    transition: all $s-30;
+    transition: all variables.$s-30;
 
     .show-nav & {
       max-height: 20rem;
@@ -115,7 +118,7 @@
       transform: translateY(-100%);
     }
 
-    @include mq-up(large) {
+    @include mixins.mq-up(large) {
       background: none;
       margin: 0;
       max-height: none;
@@ -127,7 +130,7 @@
       display: flex;
       flex-flow: column nowrap;
 
-      @include mq-up(large) {
+      @include mixins.mq-up(large) {
         flex-flow: row wrap;
         gap: 0 2.5rem;
       }
@@ -138,21 +141,21 @@
           font-size: 1.2rem;
           padding: 1rem 1.5rem;
           position: relative;
-          transition: all $s-30;
+          transition: all variables.$s-30;
 
           &:focus-visible,
           &:hover,
           &.active {
-            background: $c-white;
-            color: $c-blue;
+            background: variables.$c-white;
+            color: variables.$c-blue;
           }
 
-          @include mq-up(large) {
+          @include mixins.mq-up(large) {
             padding: 0.5rem 0;
-            transition: all $s-30;
+            transition: all variables.$s-30;
 
             &::after {
-              background: $c-white;
+              background: variables.$c-white;
               border-radius: 0.5rem;
               bottom: 0;
               content: "";
@@ -160,22 +163,22 @@
               height: 2px;
               left: 50%;
               position: absolute;
-              transition: height $s-30, width $s-30 $s-50;
+              transition: height variables.$s-30, width variables.$s-30 variables.$s-50;
               transform: translateX(-50%);
               width: 0;
-              z-index: $z-neg-1;
+              z-index: variables.$z-neg-1;
             }
 
             &:focus-visible,
             &:hover,
             &.active {
               background: none;
-              color: $c-blue;
-              transition: all $s-30 $s-50;
+              color: variables.$c-blue;
+              transition: all variables.$s-30 variables.$s-50;
 
               &::after {
                 height: 100%;
-                transition: height $s-30 $s-50, width $s-30;
+                transition: height variables.$s-30 variables.$s-50, width variables.$s-30;
                 width: 125%;
               }
             }
