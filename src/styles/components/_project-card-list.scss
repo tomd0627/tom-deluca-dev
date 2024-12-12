@@ -10,9 +10,7 @@
   }
 
   &__item {
-    height: 100%;
-    max-height: 22rem;
-    min-height: 22rem;
+    aspect-ratio: 1 / 1;
     position: relative;
     transform-style: preserve-3d;
     transition: all variables.$s-50;
