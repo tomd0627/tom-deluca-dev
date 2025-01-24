@@ -9,9 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
-    "astro": "^5.1.5",
-    "gsap": "^3.12.5",
-    "sass": "^1.83.1"
+    "astro": "^5.1.9",
+    "gsap": "^3.12.7",
+    "sass": "^1.83.4"
   }
 }
