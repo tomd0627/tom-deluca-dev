@@ -22,10 +22,10 @@
 
     @include mixins.mq-up(medium) {
       flex: 0 calc(50% - 1rem);
+      margin: 0;
     }
 
     @include mixins.mq-up(large) {
-      margin: 0;
       flex: 1;
     }
 
@@ -45,16 +45,12 @@
         right: 2rem;
       }
 
-      .skill-card-list__item--expert & {
+      .skill-card-list__item--hard-skills & {
         color: variables.$c-green;
       }
 
-      .skill-card-list__item--intermediate & {
+      .skill-card-list__item--soft-skills & {
         color: variables.$c-yellow;
-      }
-
-      .skill-card-list__item--learning & {
-        color: variables.$c-red;
       }
     }
 
@@ -63,12 +59,20 @@
     }
 
     ul {
-      margin: 0;
-      margin-left: 1.2rem;
+      margin: 0 0 0 1.2rem;
       padding: 0;
 
+      @include mixins.mq-up(medium) {
+        columns: 2;
+        gap: 2rem;
+      }
+
       li {
-        margin: 0.4rem 0;
+        margin: 0 0 0.6rem 0;
+
+        @include mixins.mq-up(medium) {
+          padding: 0 6rem 0 0;
+        }
       }
     }
   }
