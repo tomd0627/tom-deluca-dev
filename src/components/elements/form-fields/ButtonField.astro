@@ -2,13 +2,18 @@
 export interface Props {
   label: string;
   type: "button" | "submit" | "reset";
+  ariaLabel?: string;
 }
 
-const { label, type } = Astro.props;
+const { label, type, ariaLabel } = Astro.props;
 ---
 
 <div class="form-field animate-fade">
-  <button class="button form-input form-input--button" type={type}
-    >{label}</button
+  <button 
+    class="button form-input form-input--button" 
+    type={type}
+    aria-label={ariaLabel || label}
   >
+    {label}
+  </button>
 </div>

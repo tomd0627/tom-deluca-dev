@@ -1,0 +1,75 @@
+---
+import Section from "../elements/Section.astro";
+import SectionIntro from "../elements/SectionIntro.astro";
+import SectionTitle from "../elements/SectionTitle.astro";
+import ExperienceItem from "../elements/ExperienceItem.astro";
+---
+
+<Section cssClass="section--experience" title="experience">
+  <SectionIntro>
+    <SectionTitle title="My experience" />
+    <p class="animate-fade">
+      Diverse career spanning front-end development, web technologies, and
+      office operations with proven ability to deliver results.
+    </p>
+  </SectionIntro>
+  <div class="experience-list">
+    <ExperienceItem title="Front-End Developer">
+      <ul class="experience-card__highlights">
+        <li>
+          Architected and maintained responsive web applications utilizing
+          React, JavaScript, and modern CSS frameworks
+        </li>
+        <li>
+          Led component design and implementation using Storybook with
+          consistent design systems
+        </li>
+        <li>
+          Optimized websites using Tailwind CSS, GSAP animations, and
+          performance best practices
+        </li>
+        <li>
+          Collaborated with designers, backend developers, and cross-functional
+          teams to deliver pixel-perfect implementations
+        </li>
+        <li>
+          Managed content in enterprise platforms (Optimizely, Sitecore, Drupal,
+          WordPress) with bug fixes and feature enhancements
+        </li>
+        <li>Worked with Angular, Vue.js, and Svelte in diverse projects</li>
+        <li>
+          Developed custom websites from design mockups using HTML, CSS, and
+          JavaScript
+        </li>
+        <li>Built responsive templates and components for various clients</li>
+        <li>Provided technical support and maintenance for live websites</li>
+      </ul>
+    </ExperienceItem>
+
+    <ExperienceItem title="Office Administrator / Clerical Specialist">
+      <ul class="experience-card__highlights">
+        <li>
+          Managed office operations, scheduling, and administrative systems
+          ensuring 100% uptime
+        </li>
+        <li>
+          Coordinated with multiple departments to streamline workflows and
+          improve efficiency by up to 30%
+        </li>
+        <li>
+          Professional communication with clients, vendors, and internal
+          stakeholders
+        </li>
+        <li>
+          Data entry, document management, and payroll processing with zero
+          error rate
+        </li>
+        <li>Developed strong organizational and time-management skills</li>
+        <li>
+          Provide medical and legal transcription services with accuracy and
+          confidentiality
+        </li>
+      </ul>
+    </ExperienceItem>
+  </div>
+</Section>

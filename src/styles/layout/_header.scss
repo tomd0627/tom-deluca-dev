@@ -4,12 +4,13 @@
 .header {
   background: variables.$c-blue-75;
   color: variables.$c-white;
-  left: 0;
-  padding: 1.5em 0;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+  padding-block: 1.5em;
+  padding-inline: 0;
   position: fixed;
-  right: 0;
-  top: 0;
-  transition: all variables.$s-30;
+  transition: transform variables.$s-base;
   z-index: variables.$z-10;
 
   .body-scroll-down & {
@@ -23,24 +24,27 @@
   &__inner {
     align-items: center;
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    min-height: 1.875rem;
+    min-block-size: 1.875rem;
     position: relative;
 
     @include mixins.mq-up(large) {
-      min-height: 2.25rem;
+      min-block-size: 2.25rem;
     }
   }
 
   &__skip-to-content {
     @include mixins.button($bg: variables.$c-blue, $fg: variables.$c-white);
 
-    & {
-      position: absolute;
-      transform: translateY(-150%);
-      transition: all variables.$s-30;
-    }
+    position: absolute;
+    transform: translateY(-150%);
+    transition:
+      background variables.$s-base,
+      border-color variables.$s-base,
+      color variables.$s-base,
+      transform variables.$s-base;
 
     &:focus-visible {
       transform: translateY(0);
@@ -62,22 +66,26 @@
     border: 0;
     cursor: pointer;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     gap: 6px;
-    height: 30px;
     justify-content: center;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: 0;
     position: relative;
-    width: 40px;
+    block-size: 30px;
+    inline-size: 40px;
 
     .bar {
       background: variables.$c-white;
+      block-size: 3px;
       display: block;
-      height: 3px;
+      inline-size: 100%;
       opacity: 1;
       transform: translate(0) rotate(0);
-      transition: all variables.$s-30;
-      width: 100%;
+      transition:
+        opacity variables.$s-base,
+        transform variables.$s-base;
 
       .show-nav & {
         &--top {
@@ -101,17 +109,18 @@
 
   &__nav {
     background: variables.$c-blue-75;
-    left: 0;
-    margin: 0 -1.5rem;
-    max-height: 0;
+    inset-block-start: calc(100% + 1.5rem);
+    inset-inline-end: 0;
+    inset-inline-start: 0;
+    margin-block: 0;
+    margin-inline: -1.5rem;
+    max-block-size: 0;
     overflow: hidden;
     position: absolute;
-    right: 0;
-    top: calc(100% + 1.5rem);
-    transition: all variables.$s-30;
+    transition: max-block-size variables.$s-base;
 
     .show-nav & {
-      max-height: 20rem;
+      max-block-size: 20rem;
     }
 
     .body-scroll-down & {
@@ -120,18 +129,21 @@
 
     @include mixins.mq-up(large) {
       background: none;
-      margin: 0;
-      max-height: none;
+      margin-block: 0;
+      margin-inline: 0;
+      max-block-size: none;
       overflow: visible;
       position: static;
     }
 
     ul {
       display: flex;
-      flex-flow: column nowrap;
+      flex-direction: column;
+      flex-wrap: nowrap;
 
       @include mixins.mq-up(large) {
-        flex-flow: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0 2.5rem;
       }
 
@@ -139,9 +151,10 @@
         a {
           display: block;
           font-size: 1.2rem;
-          padding: 1rem 1.5rem;
+          padding-block: 1rem;
+          padding-inline: 1.5rem;
           position: relative;
-          transition: all variables.$s-30;
+          transition: all variables.$s-base;
 
           &:focus-visible,
           &:hover,
@@ -151,21 +164,23 @@
           }
 
           @include mixins.mq-up(large) {
-            padding: 0.5rem 0;
-            transition: all variables.$s-30;
+            padding-block: 0.5rem;
+            padding-inline: 0;
 
             &::after {
               background: variables.$c-white;
               border-radius: 0.5rem;
-              bottom: 0;
               content: "";
               display: block;
-              height: 2px;
-              left: 50%;
+              block-size: 2px;
+              inset-block-end: 0;
+              inset-inline-start: 50%;
               position: absolute;
-              transition: height variables.$s-30, width variables.$s-30 variables.$s-50;
+              transition:
+                height variables.$s-base,
+                width variables.$s-base variables.$s-slow;
               transform: translateX(-50%);
-              width: 0;
+              inline-size: 0;
               z-index: variables.$z-neg-1;
             }
 
@@ -174,12 +189,14 @@
             &.active {
               background: none;
               color: variables.$c-blue;
-              transition: all variables.$s-30 variables.$s-50;
+              transition: all variables.$s-base variables.$s-slow;
 
               &::after {
-                height: 100%;
-                transition: height variables.$s-30 variables.$s-50, width variables.$s-30;
-                width: 125%;
+                block-size: 100%;
+                transition:
+                  height variables.$s-base variables.$s-slow,
+                  width variables.$s-base;
+                inline-size: 125%;
               }
             }
           }

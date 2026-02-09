@@ -3,25 +3,28 @@
 
 .form {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   gap: 3rem 0;
 
-  @include mixins.mq-up(medium) {
-    margin: 0 auto;
-    width: 75%;
+  @include mixins.mq-up(large) {
+    max-inline-size: 75%;
+    margin-block: 0;
+    margin-inline: auto;
   }
 
   &-field {
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     position: relative;
 
     &-hidden {
-      height: 0;
-      left: -9999rem;
+      block-size: 0;
+      inline-size: 0;
+      inset-inline-start: -9999rem;
       opacity: 0;
       position: absolute;
-      width: 0;
       z-index: variables.$z-neg-1;
     }
   }
@@ -30,14 +33,17 @@
     &--text,
     &--textarea {
       background: none;
-      border: none;
-      border-bottom: 2px solid variables.$c-black;
+      border-block-end: 2px solid variables.$c-black;
+      border-block-start: none;
+      border-inline-end: none;
+      border-inline-start: none;
       border-radius: 0;
       color: variables.$c-black;
       font-size: 1.5rem;
+      inline-size: 100%;
       outline: none;
-      padding: 1rem 0;
-      width: 100%;
+      padding-block: 1rem;
+      padding-inline: 0;
 
       &::placeholder {
         color: transparent;
@@ -46,44 +52,44 @@
       &:focus-visible,
       &:not(:placeholder-shown) {
         & ~ .form-line {
-          width: 100%;
+          inline-size: 100%;
         }
 
         & ~ .form-label {
           font-size: 1.2rem;
-          top: -1rem;
+          inset-block-start: -1rem;
         }
       }
     }
 
     &--textarea {
       font-family: variables.$ff-body;
-      height: auto;
-      min-height: 10rem;
+      block-size: auto;
+      min-block-size: 10rem;
       resize: none;
     }
 
     &--button {
       align-self: flex-start;
 
-      @include mixins.button($bg: variables.$c-white, $fg: variables.$c-blue);
+      @include mixins.button($bg: variables.$c-blue, $fg: variables.$c-white);
     }
   }
 
   &-line {
     background: variables.$c-black;
-    bottom: 0;
-    height: 4px;
+    block-size: 4px;
+    inset-block-end: 0;
+    inline-size: 0;
     position: absolute;
-    transition: all variables.$s-30;
-    width: 0;
+    transition: inline-size variables.$s-base;
   }
 
   &-label {
     font-size: 1.5rem;
+    inset-block-start: 1rem;
     position: absolute;
-    top: 1rem;
-    transition: all variables.$s-30;
+    transition: font-size variables.$s-base, inset-block-start variables.$s-base;
   }
 
   &-required {

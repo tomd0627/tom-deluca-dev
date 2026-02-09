@@ -2,7 +2,7 @@
 
 .animate-fade {
   opacity: 0;
-  transition: all variables.$s-30;
+  transition: opacity variables.$s-base;
 
   &.active {
     opacity: 1;

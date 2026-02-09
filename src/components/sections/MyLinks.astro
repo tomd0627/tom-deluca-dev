@@ -6,25 +6,36 @@ import SectionTitle from "../elements/SectionTitle.astro";
 
 <Section cssClass="section--links" title="links">
   <SectionIntro>
-    <SectionTitle title="My links" />
+    <SectionTitle title="Let's connect" />
     <p class="animate-fade">
-      Interested in working together or exploring my resume? Let's connect!
+      Interested in working together? I'm actively seeking full-time development
+      opportunities and open to contract work. Let's start a conversation!
     </p>
   </SectionIntro>
   <div class="button-list button-list--center">
     <a
       href="mailto:tomd0627@gmail.com"
-      class="animate-fade button button--large"
-      ><i class="fas fa-envelope"></i> Email me</a
+      class="animate-fade button button--secondary"
+      aria-label="Email Tom DeLuca"
+      ><i class="fas fa-envelope" aria-hidden="true"></i> Email me</a
     >
-    <a href="tel:18459872998" class="animate-fade button button--large"
-      ><i class="fas fa-phone"></i> Call me</a
+    <a 
+      href="tel:18459872998" 
+      class="animate-fade button button--secondary"
+      aria-label="Call Tom DeLuca at 845-987-2998"
+      ><i class="fas fa-phone" aria-hidden="true"></i> Call me</a
     >
     <a
-      href="/files/Resume_Front-End.pdf"
-      target="_blank"
-      class="animate-fade button button--large"
-      ><i class="fas fa-file-lines"></i> My resume</a
+      href="/files/Tom_DeLuca_Resume_Front_End.pdf"
+      download
+      class="animate-fade button button--primary"
+      ><i class="fas fa-file-lines"></i> Front-End Developer Resume</a
+    >
+    <a
+      href="/files/Tom_DeLuca_Resume_Office_Clerical.pdf"
+      download
+      class="animate-fade button button--primary"
+      ><i class="fas fa-file-lines"></i> Office/Clerical Resume</a
     >
   </div>
 </Section>

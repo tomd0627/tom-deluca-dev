@@ -4,6 +4,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const initializeAnimations = () => {
+  // Check if user prefers reduced motion
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  // Skip animations if user prefers reduced motion
+  if (prefersReducedMotion) {
+    console.log("Animations disabled: user prefers reduced motion");
+    return;
+  }
   // Slide animation
   const slideAnimation = (
     slideElements = gsap.utils.toArray(".animate-slide"),
@@ -13,11 +23,11 @@ export const initializeAnimations = () => {
     slideYPosEndVal = 0,
     slideStartVal = "top 85%",
     slideEndVal = "bottom 15%",
-    slideStaggerVal = 0.3
+    slideStaggerVal = 0.3,
   ) => {
-    gsap.set(slideElements, {
+    (gsap.set(slideElements, {
       opacity: slideOpacityStartVal,
-      y: slideYPosEndVal,
+      y: slideYPosStartVal,
     }),
       ScrollTrigger.batch(slideElements, {
         start: slideStartVal,
@@ -47,14 +57,14 @@ export const initializeAnimations = () => {
             y: slideYPosStartVal,
             stagger: slideStaggerVal,
           }),
-      });
+      }));
   };
 
   // Fade animation
   const fadeAnimation = (
     fadeElements = gsap.utils.toArray(".animate-fade"),
     fadeStart = "top 85%",
-    fadeEnd = "bottom 15%"
+    fadeEnd = "bottom 15%",
   ) => {
     fadeElements.forEach((fadeElement) => {
       gsap.from(fadeElement, {

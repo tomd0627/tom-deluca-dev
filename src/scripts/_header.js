@@ -13,7 +13,8 @@ export const initializeHeader = () => {
     const toggleHeaderNav = (e) => {
       e.preventDefault();
       e.stopPropagation();
-      body.classList.toggle("show-nav");
+      const isOpen = body.classList.toggle("show-nav");
+      menuToggle.setAttribute("aria-expanded", isOpen);
     };
 
     const closeHeaderNav = () => {
@@ -22,9 +23,14 @@ export const initializeHeader = () => {
 
     if (menuToggle !== null) {
       menuToggle.addEventListener("click", toggleHeaderNav);
-      menuToggle.addEventListener("keyup", (e) => {
-        if (e.key === "Enter" || e.keyCode === 13) {
-          toggleHeaderNav;
+      menuToggle.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleHeaderNav(e);
+        }
+        if (e.key === "Escape") {
+          closeHeaderNav();
+          menuToggle.focus();
         }
       });
     } else {
@@ -32,43 +38,43 @@ export const initializeHeader = () => {
     }
 
     if (menuLinks !== null) {
-      // Smooth scroll anchor links
+      // Close mobile nav on link click. Smooth scrolling handled globally by _smoothScroll.js
       menuLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
+        link.addEventListener("click", () => {
           closeHeaderNav();
-
-          e.preventDefault();
-          const linkHref = link.getAttribute("href");
-          const scrolledSection = document.querySelector(linkHref);
-
-          scrolledSection.scrollIntoView({ behavior: "smooth" });
+        });
+        // Close menu on Escape while focused on a nav link
+        link.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            e.preventDefault();
+            closeHeaderNav();
+            menuToggle.focus();
+          }
         });
       });
 
-      // On desktop, highlight 'active' section on scroll
-      const mqDesktop = window.matchMedia("(min-width: 1024px)");
+      // Highlight 'active' section on scroll (mobile and desktop)
+      const options = {
+        threshold: 0.1,
+      };
 
-      if (mqDesktop.matches) {
-        const options = {
-          threshold: 0.4,
-        };
-
-        const observer = new IntersectionObserver((sections) => {
-          sections.forEach((section) => {
-            if (section.isIntersecting) {
-              menuLinks.forEach((link) => link.classList.remove("active"));
-              const activeLink = document.querySelector(
-                `.header__nav__anchor[href="#${section.target.id}"]`
-              );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            menuLinks.forEach((link) => link.classList.remove("active"));
+            const selector = `.header__nav__anchor[href="#${entry.target.id}"]`;
+            const activeLink = document.querySelector(selector);
+            
+            if (activeLink) {
               activeLink.classList.add("active");
             }
-          });
-        }, options);
-
-        sections.forEach((section) => {
-          observer.observe(section);
+          }
         });
-      }
+      }, options);
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
     } else {
       return;
     }

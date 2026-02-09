@@ -38,19 +38,19 @@
 
   &::before {
     background: $color1;
+    block-size: 100%;
     content: "";
     display: block;
-    height: 100%;
+    inset-inline-end: 100%;
+    inset-inline-start: -100vw;
     position: absolute;
-    left: -100vw;
-    right: 100%;
     z-index: variables.$z-0;
   }
 
   > * {
     background: linear-gradient($dir, $color2 $width, $color1 $width);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     margin: 0;
     padding: 1rem 1rem 1rem 0;
     position: relative;
@@ -62,30 +62,28 @@
 // Button
 @mixin button($bg: variables.$c-white, $fg: variables.$c-black) {
   align-items: center;
+  background: $bg;
   border: 2px solid $fg;
   border-radius: 50vw;
-  background: $bg;
   color: $fg;
   cursor: pointer;
   display: inline-flex;
   font-size: 1.2rem;
+  font-weight: variables.$fw-bold;
   gap: 1rem;
   justify-content: center;
-  font-weight: variables.$fw-bold;
-  min-width: 12rem;
-  padding: 0.8rem;
-  transition: all variables.$s-30;
+  min-inline-size: 12rem;
+  padding-block: 0.8rem;
+  padding-inline: 0.8rem;
+  transition:
+    background variables.$s-base,
+    border-color variables.$s-base,
+    color variables.$s-base;
 
   &:focus-visible,
   &:hover {
     background: $fg;
     border-color: $bg;
     color: $bg;
-  }
-
-  &--large {
-    font-size: 1.8rem;
-    min-width: 18rem;
-    padding: 1rem;
   }
 }

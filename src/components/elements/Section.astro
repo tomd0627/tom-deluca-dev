@@ -7,7 +7,7 @@ export interface Props {
 const { title, cssClass } = Astro.props;
 ---
 
-<section id=`${title}` class=`section ${cssClass}`>
+<section id={title} class={`section ${cssClass}`}>
   <div class="container">
     <slot />
   </div>

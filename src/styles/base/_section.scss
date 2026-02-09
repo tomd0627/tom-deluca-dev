@@ -2,12 +2,19 @@
 @use "mixins";
 
 .section {
-  padding: 8rem 0;
+  padding-block: variables.$space-3xl;
+  padding-inline: 0;
 
   &__intro {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    margin: 0 0 5rem;
+    font-size: variables.$fs-2xl;
+    line-height: variables.$lh-relaxed;
+    margin-block-end: variables.$space-3xl;
+    margin-block-start: 0;
+    margin-inline: 0;
+
+    @include mixins.mq-up(large) {
+      margin-block-end: 0;
+    }
   }
 
   &__title-wrapper {
@@ -38,7 +45,8 @@
   &__highlight {
     background: variables.$c-orange;
     color: variables.$c-black;
-    padding: 0 0.3rem;
+    padding-block: 0;
+    padding-inline: 0.3rem;
   }
 
   &__image {
@@ -62,29 +70,134 @@
     }
   }
 
+  &--hero {
+    background: variables.$c-light-blue;
+
+    .hero {
+      &__content {
+        padding-block-start: 3rem;
+        padding-block-end: 0;
+        padding-inline: 0;
+        text-align: center;
+
+        @include mixins.mq-up(large) {
+          margin-block: 0;
+          margin-inline: auto;
+          max-inline-size: 75%;
+        }
+      }
+
+      &__title {
+        color: variables.$c-black;
+        font-size: variables.$fs-5xl;
+        font-weight: variables.$fw-bold;
+        line-height: variables.$lh-tight;
+        margin-block-end: variables.$space-lg;
+        margin-block-start: variables.$space-xl;
+        margin-inline: 0;
+
+        @media (max-width: variables.$bp-medium) {
+          font-size: variables.$fs-4xl;
+        }
+      }
+
+      &__highlight {
+        color: variables.$c-orange;
+        display: block;
+        margin-block-end: 0;
+        margin-block-start: 0.5rem;
+        margin-inline: 0;
+      }
+
+      &__subtitle {
+        color: variables.$c-dark-blue;
+        font-size: variables.$fs-2xl;
+        font-weight: variables.$fw-medium;
+        line-height: variables.$lh-normal;
+        margin-block-end: variables.$space-base;
+        margin-block-start: variables.$space-lg;
+        margin-inline: 0;
+
+        @media (max-width: variables.$bp-medium) {
+          font-size: variables.$fs-xl;
+        }
+      }
+
+      &__description {
+        color: variables.$c-muted;
+        font-size: variables.$fs-lg;
+        line-height: variables.$lh-relaxed;
+        margin-block-end: variables.$space-2xl;
+        margin-block-start: variables.$space-lg;
+        margin-inline: 0;
+
+        strong {
+          color: variables.$c-dark-blue;
+          font-weight: variables.$fw-bold;
+        }
+      }
+
+      &__ctas {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-block-end: 0;
+        margin-block-start: 2.5rem;
+        margin-inline: 0;
+
+        @media (max-width: variables.$bp-medium) {
+          flex-direction: column;
+          margin-block-start: 2rem;
+
+          a {
+            inline-size: 100%;
+          }
+        }
+      }
+    }
+  }
+
   &--about {
     background: variables.$c-dark-blue;
     color: variables.$c-white;
 
     .section__image {
       display: flex;
-      flex-flow: row nowrap;
+      flex-direction: row;
+      flex-wrap: nowrap;
       justify-content: center;
     }
 
-    @include mixins.mq-up(medium) {
+    @include mixins.mq-up(large) {
       .container {
         align-items: center;
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
         gap: 3rem;
+        justify-content: space-between;
       }
 
       .section__image {
         flex: 0 0 45%;
         justify-content: flex-end;
       }
+    }
+  }
+
+  &--value {
+    background: variables.$c-green;
+    color: variables.$c-white;
+  }
+
+  &--experience {
+    background: variables.$c-yellow;
+    color: variables.$c-black;
+
+    .section__title-wrapper {
+      @include mixins.text-color-split($color2: variables.$c-yellow);
     }
   }
 
@@ -114,9 +227,22 @@
   }
 
   &--vertical-center {
+    block-size: 100%;
     display: flex;
-    flex-flow: column nowrap;
-    height: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
+  }
+}
+
+.line-divider {
+  border: none;
+  border-block-start: 1px solid variables.$c-muted;
+  margin-block-end: variables.$space-lg;
+  margin-block-start: variables.$space-lg;
+  margin-inline: 0;
+
+  &--white {
+    border-block-start: 1px solid variables.$c-white;
   }
 }

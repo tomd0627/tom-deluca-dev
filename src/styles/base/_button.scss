@@ -1,5 +1,49 @@
+@use "../settings/variables";
 @use "mixins";
 
 .button {
   @include mixins.button;
+
+  &--primary {
+    @include mixins.button($bg: variables.$c-orange, $fg: variables.$c-white);
+
+    &:focus-visible,
+    &:hover {
+      background: variables.$c-white;
+      border-color: variables.$c-orange;
+      color: variables.$c-orange;
+    }
+  }
+
+  &--secondary {
+    @include mixins.button(
+      $bg: variables.$c-dark-blue,
+      $fg: variables.$c-white
+    );
+
+    &:focus-visible,
+    &:hover {
+      background: variables.$c-white;
+      border-color: variables.$c-dark-blue;
+      color: variables.$c-dark-blue;
+    }
+  }
+
+  &--outline {
+    @include mixins.button($bg: transparent, $fg: variables.$c-dark-blue);
+    border: 2px solid variables.$c-dark-blue;
+
+    &:focus-visible,
+    &:hover {
+      background: variables.$c-dark-blue;
+      color: variables.$c-white;
+    }
+  }
+
+  &--large {
+    font-size: 1.8rem;
+    min-inline-size: 18rem;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+  }
 }

@@ -10,8 +10,10 @@ const { name, cssClass, icon } = Astro.props;
 
 <div
   class=`skill-card-list__item skill-card-list__item--${cssClass} animate-slide`
+  role="article"
+  aria-label={`${name} skill`}
 >
-  <i class=`skill-card-list__item__icon fa-solid fa-${icon}`></i>
+  <i class=`skill-card-list__item__icon fa-solid fa-${icon}` aria-hidden="true"></i>
   <h3>{name}</h3>
   <slot />
 </div>

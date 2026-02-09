@@ -11,25 +11,28 @@
 
 html,
 body {
-  height: 100%;
+  block-size: 100%;
 }
 
 body {
   background: variables.$c-white;
   color: variables.$c-black;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   font-family: variables.$ff-body;
   font-size: 1rem;
   line-height: 1.2rem;
-  margin: 0;
-  overflow-x: hidden;
+  margin-block: 0;
+  margin-inline: 0;
+  overflow-inline: hidden;
 }
 
 main {
   display: flex;
-  flex-flow: column nowrap;
   flex: 1;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 h1,
@@ -60,15 +63,17 @@ a {
 }
 
 img {
+  block-size: auto;
   display: block;
-  height: auto;
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 .container {
-  max-width: variables.$site-width;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin-block: 0;
+  margin-inline: auto;
+  max-inline-size: variables.$site-width;
+  padding-block: 0;
+  padding-inline: 1.5rem;
 }
 
 .align-center {
@@ -78,12 +83,16 @@ img {
 .list {
   &--unstyled {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
 
     li {
-      margin: 0;
-      padding: 0;
+      margin-block: 0;
+      margin-inline: 0;
+      padding-block: 0;
+      padding-inline: 0;
     }
   }
 }
@@ -103,9 +112,9 @@ img {
 }
 
 .visually-hidden {
-  height: 0;
-  left: -9999rem;
+  block-size: 0;
+  inline-size: 0;
+  inset-inline-start: -9999rem;
   overflow: hidden;
   position: absolute;
-  width: 0;
 }

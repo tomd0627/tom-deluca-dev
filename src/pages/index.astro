@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/sections/Hero.astro";
+import ValueProposition from "../components/sections/ValueProposition.astro";
 import AboutMe from "../components/sections/AboutMe.astro";
+import Experience from "../components/sections/Experience.astro";
 import MySkills from "../components/sections/MySkills.astro";
 import MyProjects from "../components/sections/MyProjects.astro";
 import ContactMe from "../components/sections/ContactMe.astro";
@@ -8,10 +11,13 @@ import MyLinks from "../components/sections/MyLinks.astro";
 ---
 
 <Layout
-  title="Tom DeLuca | Front-End Developer"
-  description="I'm a front-end developer based in New York, passionate about transforming designs into seamless, responsive websites. With a deep expertise in HTML, CSS, and JavaScript, I bring ideas to life on the web with precision and flair. Collaborating with others to create visually stunning and user-friendly sites is what I do best."
+  title="Tom DeLuca | Full-Stack Developer & Web Professional - New York"
+  description="Full-stack front-end developer and professional in New York. Specializing in React, JavaScript, CSS, and modern web technologies. Transforming designs into seamless, responsive websites with proven expertise in component development, performance optimization, and cross-functional collaboration."
 >
+  <Hero />
+  <ValueProposition />
   <AboutMe />
+  <Experience />
   <MySkills />
   <MyProjects />
   <ContactMe />

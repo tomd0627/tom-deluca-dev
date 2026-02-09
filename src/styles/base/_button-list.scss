@@ -3,14 +3,11 @@
 
 .button-list {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem;
 
   &--center {
     justify-content: center;
-  }
-
-  .button {
-    @include mixins.button($bg: variables.$c-white, $fg: variables.$c-blue);
   }
 }
