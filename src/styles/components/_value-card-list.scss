@@ -7,6 +7,16 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-block-start: variables.$space-xl;
 
+  @include mixins.mq-up(large) {
+    > :nth-last-child(2) {
+      grid-column: 2 / 3;
+    }
+
+    > :last-child {
+      grid-column: 3 / 4;
+    }
+  }
+
   @include mixins.mq-down(medium) {
     grid-template-columns: 1fr;
     gap: variables.$space-lg;

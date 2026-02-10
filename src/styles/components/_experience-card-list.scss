@@ -61,8 +61,8 @@
     padding-inline: 0;
 
     @include mixins.mq-up(medium) {
-      columns: 2;
-      gap: 2rem;
+      display: flex;
+      flex-flow: row wrap;
     }
 
     li {
@@ -73,7 +73,8 @@
       margin-inline: 0;
 
       @include mixins.mq-up(medium) {
-        padding-inline-end: 6rem;
+        flex: 1 50%;
+        padding-inline-end: 3rem;
       }
     }
   }
