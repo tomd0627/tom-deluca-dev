@@ -2,33 +2,33 @@ export const initializeHeader = () => {
   const body = document.body;
 
   // Header utilities
-  const header = document.querySelector(".header");
+  const header = document.querySelector('.header');
 
   if (header !== null) {
     // Nav toggle on mobile
-    const menuToggle = document.querySelector(".header__menu-toggle");
-    const menuLinks = document.querySelectorAll(".header__nav__anchor");
-    const sections = document.querySelectorAll("section");
+    const menuToggle = document.querySelector('.header__menu-toggle');
+    const menuLinks = document.querySelectorAll('.header__nav__anchor');
+    const sections = document.querySelectorAll('section');
 
     const toggleHeaderNav = (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const isOpen = body.classList.toggle("show-nav");
-      menuToggle.setAttribute("aria-expanded", isOpen);
+      const isOpen = body.classList.toggle('show-nav');
+      menuToggle.setAttribute('aria-expanded', isOpen);
     };
 
     const closeHeaderNav = () => {
-      body.classList.remove("show-nav");
+      body.classList.remove('show-nav');
     };
 
     if (menuToggle !== null) {
-      menuToggle.addEventListener("click", toggleHeaderNav);
-      menuToggle.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
+      menuToggle.addEventListener('click', toggleHeaderNav);
+      menuToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           toggleHeaderNav(e);
         }
-        if (e.key === "Escape") {
+        if (e.key === 'Escape') {
           closeHeaderNav();
           menuToggle.focus();
         }
@@ -40,12 +40,12 @@ export const initializeHeader = () => {
     if (menuLinks !== null) {
       // Close mobile nav on link click. Smooth scrolling handled globally by _smoothScroll.js
       menuLinks.forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener('click', () => {
           closeHeaderNav();
         });
         // Close menu on Escape while focused on a nav link
-        link.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
+        link.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
             e.preventDefault();
             closeHeaderNav();
             menuToggle.focus();
@@ -61,12 +61,12 @@ export const initializeHeader = () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            menuLinks.forEach((link) => link.classList.remove("active"));
+            menuLinks.forEach((link) => link.classList.remove('active'));
             const selector = `.header__nav__anchor[href="#${entry.target.id}"]`;
             const activeLink = document.querySelector(selector);
-            
+
             if (activeLink) {
-              activeLink.classList.add("active");
+              activeLink.classList.add('active');
             }
           }
         });
@@ -79,7 +79,7 @@ export const initializeHeader = () => {
       return;
     }
 
-    body.addEventListener("click", () => {
+    body.addEventListener('click', () => {
       closeHeaderNav();
     });
   } else {

@@ -5,28 +5,30 @@ export const initializeSmoothScroll = ({
   offset = 0,
   updateHash = true,
 } = {}) => {
-  const prefersReduced = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const getHeaderOffset = () => {
-    if (!headerSelector) return offset;
+    if (!headerSelector) {
+      return offset;
+    }
     const header = document.querySelector(headerSelector);
-    if (!header) return offset;
+    if (!header) {
+      return offset;
+    }
     const styles = getComputedStyle(header);
-    if (styles.position === "fixed" || styles.position === "sticky") {
+    if (styles.position === 'fixed' || styles.position === 'sticky') {
       return header.getBoundingClientRect().height + offset;
     }
     return offset;
   };
 
   const scrollToTarget = (target) => {
-    if (!target) return;
+    if (!target) {
+      return;
+    }
     const top = Math.max(
       0,
-      target.getBoundingClientRect().top +
-        window.pageYOffset -
-        getHeaderOffset(),
+      target.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset()
     );
     if (prefersReduced) {
       window.scrollTo(0, top);
@@ -34,11 +36,13 @@ export const initializeSmoothScroll = ({
       return Promise.resolve();
     }
     return new Promise((resolve) => {
-      window.scrollTo({ top, behavior: "smooth" });
+      window.scrollTo({ top, behavior: 'smooth' });
       // Resolve after approximate duration using event polling
       const checkIfDone = () => {
         const atTarget = Math.abs(window.pageYOffset - top) <= 2;
-        if (atTarget) return resolve();
+        if (atTarget) {
+          return resolve();
+        }
         requestAnimationFrame(checkIfDone);
       };
       requestAnimationFrame(checkIfDone);
@@ -49,50 +53,66 @@ export const initializeSmoothScroll = ({
 
   const setFocusToTarget = (target) => {
     try {
-      target.setAttribute("tabindex", "-1");
+      target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });
       // Remove tabindex after focus to restore normal tab order
-      target.addEventListener("blur", () => {
-        target.removeAttribute("tabindex");
-      }, { once: true });
-    } catch (e) {
+      target.addEventListener(
+        'blur',
+        () => {
+          target.removeAttribute('tabindex');
+        },
+        { once: true }
+      );
+    } catch {
       // Silently fail if focus cannot be set
     }
   };
 
   const clickHandler = (e) => {
     const el = e.target.closest && e.target.closest(selector);
-    if (!el) return;
-    const href = el.getAttribute("href") || el.dataset.scrollTarget;
-    if (!href) return;
+    if (!el) {
+      return;
+    }
+    const href = el.getAttribute('href') || el.dataset.scrollTarget;
+    if (!href) {
+      return;
+    }
     // Only handle same-page hash links
-    if (href.startsWith("#")) {
+    if (href.startsWith('#')) {
       const id = href.slice(1);
       const target = document.getElementById(id);
-      if (!target) return;
+      if (!target) {
+        return;
+      }
 
       e.preventDefault();
 
       scrollToTarget(target).then(() => {
-        if (updateHash) history.pushState(null, "", `#${id}`);
+        if (updateHash) {
+          history.pushState(null, '', `#${id}`);
+        }
       });
     }
   };
 
-  document.addEventListener("click", clickHandler, { passive: false });
+  document.addEventListener('click', clickHandler, { passive: false });
 
   return {
     destroy: () => {
-      document.removeEventListener("click", clickHandler);
+      document.removeEventListener('click', clickHandler);
     },
   };
 };
 
 export const scrollToHash = (hash, opts = {}) => {
-  if (!hash) return Promise.resolve();
-  const id = hash.startsWith("#") ? hash.slice(1) : hash;
+  if (!hash) {
+    return Promise.resolve();
+  }
+  const id = hash.startsWith('#') ? hash.slice(1) : hash;
   const target = document.getElementById(id);
-  if (!target) return Promise.resolve();
+  if (!target) {
+    return Promise.resolve();
+  }
   const instance = initializeSmoothScroll(opts);
   return (instance && instance.destroy && instance, Promise.resolve());
 };

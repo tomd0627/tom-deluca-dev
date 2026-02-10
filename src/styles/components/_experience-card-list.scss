@@ -1,5 +1,5 @@
-@use "../base/mixins";
-@use "../settings/variables";
+@use '../base/mixins';
+@use '../settings/variables';
 
 .experience-list {
   display: flex;
@@ -14,7 +14,7 @@
   padding-block: variables.$space-xl;
   padding-inline: variables.$space-xl;
 
-  @media (max-width: variables.$bp-medium) {
+  @include mixins.mq-down(medium) {
     padding-block: variables.$space-lg;
     padding-inline: variables.$space-lg;
   }
@@ -27,14 +27,13 @@
     justify-content: space-between;
     margin-block-end: 0.5rem;
 
-    @media (max-width: variables.$bp-medium) {
+    @include mixins.mq-down(medium) {
       flex-direction: column;
     }
   }
 
   &__title {
-    margin-block-end: 1.5rem;
-    margin-block-start: 0;
+    margin-block: 0 1.5rem;
     margin-inline: 0;
   }
 
@@ -51,14 +50,12 @@
     font-size: variables.$fs-lg;
     font-weight: variables.$fw-bold;
     line-height: variables.$lh-normal;
-    margin-block-end: variables.$space-base;
-    margin-block-start: 0;
+    margin-block: 0 variables.$space-base;
     margin-inline: 0;
   }
 
   &__highlights {
-    margin-block-end: 0;
-    margin-block-start: 0;
+    margin-block: 0;
     margin-inline-start: 1.2rem;
     padding-block: 0;
     padding-inline: 0;
@@ -72,8 +69,7 @@
       color: variables.$c-muted;
       font-size: variables.$fs-base;
       line-height: variables.$lh-relaxed;
-      margin-block-end: 0.6rem;
-      margin-block-start: 0;
+      margin-block: 0 0.6rem;
       margin-inline: 0;
 
       @include mixins.mq-up(medium) {
@@ -82,4 +78,3 @@
     }
   }
 }
-

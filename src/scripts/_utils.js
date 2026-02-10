@@ -5,20 +5,20 @@ export const initializeUtills = () => {
   let prevScrollpos = window.pageYOffset;
 
   const scrollBody = () => {
-    let currentScrollPos = window.pageYOffset;
+    const currentScrollPos = window.pageYOffset;
 
     if (prevScrollpos < currentScrollPos) {
-      body.classList.add("body-scroll-down");
-      body.classList.remove("body-scroll-up");
+      body.classList.add('body-scroll-down');
+      body.classList.remove('body-scroll-up');
     } else {
-      body.classList.add("body-scroll-up");
-      body.classList.remove("body-scroll-down");
+      body.classList.add('body-scroll-up');
+      body.classList.remove('body-scroll-down');
     }
 
     prevScrollpos = currentScrollPos;
   };
 
-  document.addEventListener("scroll", () => {
+  document.addEventListener('scroll', () => {
     scrollBody();
   });
 };

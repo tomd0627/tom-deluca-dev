@@ -3,7 +3,7 @@ export interface Props {
   id: string;
   name: string;
   label: string;
-  type: "text" | "email";
+  type: 'text' | 'email';
   isRequired?: boolean;
 }
 
@@ -31,10 +31,11 @@ if (isRequired === true) {
     {
       isRequired && (
         <>
-          {" "}
+          {' '}
           <span class="form-required">*</span>
         </>
       )
     }
   </span>
+  <span id={`${id}-error`} class="form-error" role="alert"></span>
 </label>

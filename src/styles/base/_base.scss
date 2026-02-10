@@ -1,7 +1,6 @@
-@use "../settings/variables";
-@use "mixins";
-
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@600&display=swap");
+@use '../settings/variables';
+@use 'mixins';
+@import 'https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@600&display=swap';
 
 *,
 *::before,
@@ -18,8 +17,7 @@ body {
   background: variables.$c-white;
   color: variables.$c-black;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-flow: column nowrap;
   font-family: variables.$ff-body;
   font-size: 1rem;
   line-height: 1.2rem;
@@ -31,8 +29,7 @@ body {
 main {
   display: flex;
   flex: 1;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-flow: column nowrap;
 }
 
 h1,

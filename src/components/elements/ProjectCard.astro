@@ -6,11 +6,7 @@ export interface Props {
 const { name } = Astro.props;
 ---
 
-<a 
-  href="/" 
-  class="project-card-list__item-container animate-slide"
-  aria-label={`${name} project`}
->
+<a href="/" class="project-card-list__item-container animate-slide" aria-label={`${name} project`}>
   <div class="project-card-list__item">
     <div class="project-card-list__item__front">
       <slot name="project-card-image" />

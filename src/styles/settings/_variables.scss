@@ -9,7 +9,7 @@ $bp-extra-large: 1300px;
 
 // Colors - WCAG AAA Compliant
 // Primary colors with improved contrast
-$c-white: #ffffff;
+$c-white: #fff;
 $c-off-white: #f5f5f5;
 $c-black: #1a1a1a;
 $c-black-50: rgba($c-black, 0.5);
@@ -22,9 +22,9 @@ $c-dark-blue: #003d7a; // Darker for WCAG compliance
 $c-light-blue: #d4f0ff; // Lighter for backgrounds
 
 // Accent colors
-$c-red: #cc0000; // Darker red for compliance
-$c-orange: #cc6600; // Darker orange for compliance
-$c-yellow: #ccaa00; // Darker, more saturated yellow
+$c-red: #c00; // Darker red for compliance
+$c-orange: #c60; // Darker orange for compliance
+$c-yellow: #ca0; // Darker, more saturated yellow
 $c-green: #2d8c2a; // Darker, more accessible green
 
 // Neutral grays and borders (WCAG compliant)
@@ -40,8 +40,8 @@ $grad-orange-light-start: rgba($c-orange, 0.08);
 $grad-orange-light-end: rgba($c-blue, 0.08);
 
 // Fonts
-$ff-body: "Lato", sans-serif;
-$ff-heading: "Raleway", sans-serif;
+$ff-body: 'Lato', sans-serif;
+$ff-heading: 'Raleway', sans-serif;
 
 // Font Weights
 $fw-normal: 400;

@@ -1,4 +1,5 @@
-@use "../settings/variables";
+@use '../base/mixins';
+@use '../settings/variables';
 
 .value-grid {
   display: grid;
@@ -6,7 +7,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-block-start: variables.$space-xl;
 
-  @media (max-width: variables.$bp-medium) {
+  @include mixins.mq-down(medium) {
     grid-template-columns: 1fr;
     gap: variables.$space-lg;
   }
@@ -22,8 +23,7 @@
   h3 {
     color: variables.$c-black;
     font-size: 1.2rem;
-    margin-block-end: 0.8rem;
-    margin-block-start: 1.2rem;
+    margin-block: 1.2rem 0.8rem;
     margin-inline: 0;
   }
 

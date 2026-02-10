@@ -1,5 +1,5 @@
-@use "../settings/variables";
-@use "mixins";
+@use '../settings/variables';
+@use 'mixins';
 
 .button {
   @include mixins.button;
@@ -16,10 +16,7 @@
   }
 
   &--secondary {
-    @include mixins.button(
-      $bg: variables.$c-dark-blue,
-      $fg: variables.$c-white
-    );
+    @include mixins.button($bg: variables.$c-dark-blue, $fg: variables.$c-white);
 
     &:focus-visible,
     &:hover {
@@ -31,6 +28,7 @@
 
   &--outline {
     @include mixins.button($bg: transparent, $fg: variables.$c-dark-blue);
+
     border: 2px solid variables.$c-dark-blue;
 
     &:focus-visible,

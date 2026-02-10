@@ -1,10 +1,9 @@
-@use "../settings/variables";
-@use "mixins";
+@use '../settings/variables';
+@use 'mixins';
 
 .form {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-flow: column nowrap;
   gap: 3rem 0;
 
   @include mixins.mq-up(large) {
@@ -15,9 +14,14 @@
 
   &-field {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-flow: column nowrap;
     position: relative;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
     &-hidden {
       block-size: 0;
@@ -60,6 +64,20 @@
           inset-block-start: -1rem;
         }
       }
+
+      // Styling for invalid state
+      &[aria-invalid='true'] {
+        border-block-end-color: variables.$c-red;
+
+        & ~ .form-label {
+          color: variables.$c-red;
+        }
+
+        & ~ .form-line {
+          background: variables.$c-red;
+          inline-size: 100%;
+        }
+      }
     }
 
     &--textarea {
@@ -89,10 +107,23 @@
     font-size: 1.5rem;
     inset-block-start: 1rem;
     position: absolute;
-    transition: font-size variables.$s-base, inset-block-start variables.$s-base;
+    transition:
+      font-size variables.$s-base,
+      inset-block-start variables.$s-base;
   }
 
   &-required {
     color: variables.$c-red;
+  }
+
+  &-error {
+    color: variables.$c-red;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    inset-block-end: -1.5rem;
+    line-height: 1.4;
+    min-height: 1.4em;
+    position: absolute;
   }
 }

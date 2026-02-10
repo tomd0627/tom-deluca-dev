@@ -1,10 +1,9 @@
-@use "../settings/variables";
-@use "mixins";
+@use '../settings/variables';
+@use 'mixins';
 
 .button-list {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 1rem;
 
   &--center {

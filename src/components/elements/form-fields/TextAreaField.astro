@@ -28,10 +28,11 @@ if (isRequired === true) {
     {
       isRequired && (
         <>
-          {" "}
+          {' '}
           <span class="form-required">*</span>
         </>
       )
     }
   </span>
+  <span id={`${id}-error`} class="form-error" role="alert"></span>
 </label>
