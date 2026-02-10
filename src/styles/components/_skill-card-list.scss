@@ -72,12 +72,14 @@
       }
 
       li {
+        color: variables.$c-muted;
+        font-size: variables.$fs-base;
+        line-height: variables.$lh-relaxed;
         margin-block: 0 0.6rem;
         margin-inline: 0;
 
         @include mixins.mq-up(medium) {
-          padding-inline: 0 6rem;
-          padding-block: 0;
+          padding-inline-end: 6rem;
         }
       }
     }

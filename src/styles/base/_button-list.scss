@@ -9,4 +9,10 @@
   &--center {
     justify-content: center;
   }
+
+  &__item {
+    @include mixins.mq-down(medium) {
+      inline-size: 100%;
+    }
+  }
 }
