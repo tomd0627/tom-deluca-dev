@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+*.min.js
+*.min.css
+.env
+.env.*
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+.git/
