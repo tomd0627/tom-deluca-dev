@@ -4,7 +4,7 @@ import { initializeHeader } from './_header';
 import { initializeProjectCard } from './_projectCard';
 import { initializeUtills } from './_utils';
 import { initializeSmoothScroll } from './_smoothScroll';
-import { initializeFormValidation } from './formValidation';
+import { initializeFormValidation } from './_formValidation';
 
 export const initialize = () => {
   initializeUtills();
