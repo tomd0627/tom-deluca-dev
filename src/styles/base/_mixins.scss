@@ -78,6 +78,15 @@
     -webkit-text-fill-color: transparent;
     z-index: variables.$z-1;
   }
+
+  [dir='rtl'] & {
+    background: linear-gradient((-$dir), $color1 $width, $color2 $width);
+
+    > * {
+      background: linear-gradient((-$dir), $color2 $width, $color1 $width);
+      background-clip: text;
+    }
+  }
 }
 
 // Button

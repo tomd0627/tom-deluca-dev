@@ -16,6 +16,10 @@
       flex-flow: row nowrap;
       gap: 0;
       text-align: left;
+
+      [dir='rtl'] & {
+        text-align: right;
+      }
     }
   }
 
@@ -84,6 +88,10 @@
   &__tagline {
     @include mixins.mq-up(large) {
       text-align: right;
+
+      [dir='rtl'] & {
+        text-align: left;
+      }
     }
 
     .fa-solid {

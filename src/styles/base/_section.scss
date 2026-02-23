@@ -4,6 +4,7 @@
 .section {
   padding-block: variables.$space-3xl;
   padding-inline: 0;
+  overflow-inline: hidden;
 
   &__intro {
     font-size: variables.$fs-2xl;
@@ -22,6 +23,10 @@
         $color1: variables.$c-white,
         $color2: variables.$c-dark-blue
       );
+    }
+
+    .section--experience & {
+      @include mixins.text-color-split($color2: variables.$c-yellow);
     }
 
     .section--skills & {
@@ -185,10 +190,6 @@
   &--experience {
     background: variables.$c-yellow;
     color: variables.$c-black;
-
-    .section__title-wrapper {
-      @include mixins.text-color-split($color2: variables.$c-yellow);
-    }
   }
 
   &--skills {

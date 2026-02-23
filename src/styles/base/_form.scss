@@ -24,12 +24,12 @@
     }
 
     &-hidden {
-      block-size: 0;
-      inline-size: 0;
-      inset-inline-start: -9999rem;
-      opacity: 0;
+      block-size: 1px;
+      clip-path: inset(50%);
+      inline-size: 1px;
+      overflow: hidden;
       position: absolute;
-      z-index: variables.$z-neg-1;
+      white-space: nowrap;
     }
   }
 

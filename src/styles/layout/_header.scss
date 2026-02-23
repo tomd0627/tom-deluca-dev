@@ -176,6 +176,10 @@
               transform: translateX(-50%);
               inline-size: 0;
               z-index: variables.$z-neg-1;
+
+              [dir='rtl'] & {
+                transform: translateX(50%);
+              }
             }
 
             &:focus-visible,
